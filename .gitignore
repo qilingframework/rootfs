@@ -1,0 +1,36 @@
+# IDE left over
+.DS_Store
+.vscode
+.idea
+*.pyc
+*.cache
+*.cache2
+.*.swp
+*.raw
+
+# cache and misc
+qiling.egg-info/
+__pycache__/
+*.py[cod]
+build
+dist
+
+# test and logs
+tests/mac_test_elf.sh
+jexamples/
+logs/
+log/
+test_qlog/
+log_test/
+qlog/
+qlogs/
+test_syscall_*.txt
+*.no.py
+.gitkeep
+test.file
+*.file
+*.qlog
+*.d
+*.o
+core
+*.perf
