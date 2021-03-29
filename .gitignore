@@ -16,8 +16,6 @@ build
 dist
 
 # test and logs
-tests/mac_test_elf.sh
-jexamples/
 logs/
 log/
 test_qlog/
@@ -34,3 +32,10 @@ test.file
 *.o
 core
 *.perf
+
+x8664_macos/kext/SuperRootkit.kext/*
+x86_windows/bin/GandCrab502.bin
+x86_windows/bin/UselessDisk.bin
+x86_windows/bin/al-khaser.bin
+x86_windows/bin/sality.dll
+x86_windows/bin/wannacry.bin
