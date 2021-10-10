@@ -33,6 +33,7 @@ test.file
 core
 *.perf
 x8664_linux/absolutepath_test.txt
+x8664_macos/test.file
 
 x8664_macos/kext/SuperRootkit.kext/*
 x86_windows/bin/GandCrab502.bin
