@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+<style>
+#internet-form input[type=text] {width: 250px;}
+#internet-form select{width: 267px;}
+#gbx_overlay {opacity: 0.3;   filter: alpha(opacity=30); background: #ddd;}
+.save-msg { left:50%;  margin-left: -77px;}
+</style>
+</head>
+  <body>
+        <fieldset class="ifmwrap-netset">
+            <div class="legend-main">
+                <div class="txt-center" id="loadingTip" style="padding: 50px 0;">Loading...</div>
+                <div id="netWrap" class="none">
+                    <p id="notAllowTip" class="none main-section-warning">Internet settings is unavailable under Universal Repeater mode. Please change the Wireless Repeating mode, and try again.</p>
+                    <form id="internet-form">
+                    <div class="control-group"></div>
+                        <p id="notAllowTip"  style="margin-bottom: 20px;"  class="none red"></p>
+                        <input type="hidden" name="connect" id="connect" value="1">
+                        <input type="hidden" name="lanIp" id="lanIp">
+                        <input type="hidden" name="lanMask" id="lanMask">
+                        <div class="control-group"id="net_recomend_wrap">
+                            <label class="control-label">Tenda recommends:</label>
+                            <div class="controls controls-text"><b id="outType"></b></div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Select a connection type:</label>
+                            <div class="controls">
+                                <select name="netWanType" class="input-append" id="netWanType">
+                                    <option value="0">DHCP</option>
+                                    <option value="1">Static IP</option>
+                                    <option value="2"> PPPoE</option>
+                                </select>
+                                <span class="select-tab"></span>
+                            </div>
+                        </div>
+						<div id="dhcp_set" class="none">
+							<div class="control-group">
+								<label class="control-label" data-lang="DNS Settings">DNS Settings</label>
+								<div class="controls">
+									<select name="dhcpDnsAuto" class="input-append" id="dhcpDnsAuto">
+										<option value="1">Obtain DNS address automatically</option>
+										<option value="0">Set DNS address manually</option>
+									</select>
+								</div>
+							</div>
+							<div id="dhcp-manual-wrapper" class="none">
+								<div class="control-group">
+									<label class="control-label">Preferred DNS Server:</label>
+									<div class="controls">
+										<input type="text" class="validatebox" id="dhcpDns1" name="dhcpDns1" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的首选DNS服务器&quot;}">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Alternate DNS Server:</label>
+									<div class="controls">
+										<input type="text" class="validatebox" id="dhcpDns2" name="dhcpDns2" maxlength="15" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的备用DNS服务器&quot;}">
+									</div>
+								</div>
+							</div>
+						</div>
+                        <div id="static_ip" class="none">
+                            <div class="control-group">
+                                <label class="control-label">IP Address:</label>
+                                <div class="controls">
+                                    <input type="text" class="validatebox" id="staticIp" name="staticIp" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;ip&quot;}">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Subnet Mask:</label>
+                                <div class="controls">
+                                    <input type="text" class="validatebox" id="mask" name="mask" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;mask&quot;}">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Default Gateway:</label>
+                                <div class="controls">
+                                    <input type="text" class="validatebox" id="gateway" name="gateway" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的网关地址&quot;}">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Preferred DNS Server:</label>
+                                <div class="controls">
+                                    <input type="text" class="validatebox" id="dns1" name="dns1" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的首选DNS服务器&quot;}">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Alternate DNS Server:</label>
+                                <div class="controls">
+                                    <input type="text" class="validatebox" id="dns2" name="dns2" maxlength="15" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的备用DNS服务器&quot;}">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ppoe_set" class="none">
+                            <div class="control-group">
+                                <label class="control-label">ISP Username:</label>
+                                <div class="controls">
+                                    <input type="text" class="validatebox" id="adslUser" name="adslUser" maxlength="128" data-options="{&quot;type&quot;:&quot;ppoe&quot;}">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">ISP Password:</label>
+                                <div class="controls">
+                                    <input type="text" class="validatebox" id="adslPwd" name="adslPwd" maxlength="128" data-options="{&quot;type&quot;:&quot;ppoe&quot;}">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" data-lang="DNS Settings">DNS Settings  </label>
+                                    <div class="controls">
+                                        <select name="pppoeDnsAuto" class="input-append" id="pppoeDnsAuto">
+                                            <option value="1">Obtain DNS address automatically</option>
+                                            <option value="0">Set DNS address manually</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="pppoe-manual-wrapper" class="none">
+                                    <div class="control-group">
+                                        <label class="control-label">Preferred DNS Server:</label>
+                                        <div class="controls">
+                                            <input type="text" class="validatebox" id="pppoeDns1" name="pppoeDns1" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的首选DNS服务器&quot;}">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">Alternate DNS Server:</label>
+                                        <div class="controls">
+                                            <input type="text" class="validatebox" id="pppoeDns2" name="pppoeDns2" maxlength="15" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的备用DNS服务器&quot;}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div id="connect_message" class="none">
+                                <div class="control-group" id="connectStatusWrap">
+                                <label class="control-label">Connection Status:</label>
+                                <div class="controls controls-text"><span id="connectStatus"></span></div>
+                            </div>
+                            <div class="control-group" id="connect_time">
+                                <label class="control-label">Connected Time:</label>
+                                <div class="controls controls-text" id="connectTime"></div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="red page-err" id="message-err">&nbsp;</div>
+                        </div>
+                        <div class="btn-group">
+                            <input type="button" id="wan_submit" class="btn btn-normal" value="Connect">
+                        </div>                    
+                </div>
+
+                </form>
+            </div>
+        </fieldset>
+
+
+    <div class="save-msg none">
+        <div class="save-loading"></div>
+        <div id="page-message"></div>
+    </div>   
+  
+  <script src="js/libs/j.js"></script>
+  <script src="js/libs/public.js"></script>
+  <script src="js/libs/reasy-ui-1.0.3.js"></script>
+  <script src="js/net_set.js"></script>
+</body></html>

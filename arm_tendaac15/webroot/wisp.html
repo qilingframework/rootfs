@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+    <script>var img1 = new Image();
+		img1.src = "img/btn_off.png";
+		var img2 = new Image();
+		img2.src = "img/btn_en.png";
+		var img3 = new Image();
+		img3.src = "img/loading.gif";</script>
+  <style type="text/css">.self-select-wrapper{
+    position: relative;
+    display: inline-block;
+    border: 1px solid #d0d0d0;
+    width: 270px;
+    height:30px;
+	
+    font-size: 14px;
+}
+  
+div.self-select-wrapper{
+    /*解决IE67 块级元素不支持display:inline-block*/
+    *display:inline;
+}
+  
+.self-select-wrapper .self-select-display{
+    display: inline-block;
+    cursor: pointer;
+    width:100%;
+    height:30px;
+    background: -moz-linear-gradient(top, #fff, #eee);
+    background: -o-linear-gradient(top,#fff, #eee);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#eee));
+    filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#ffffff,endColorStr=#eeeeee);
+}
+  
+.self-select-display .self-select-text{
+    padding-left:10px;
+    display: inline-block;
+    line-height: 30px;
+    white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	width: 230px;
+}
+  
+.self-select-display .self-select-arrow-down{
+    height:0;
+    width:0;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    display: inline-block;
+    vertical-align: middle;
+    border-color:#aaa transparent transparent transparent;
+    border-style:solid dashed dashed dashed;
+    border-width:7px;
+	
+	float:right;
+	margin: 12px 5px 0 0;
+}
+  
+.self-select-wrapper .self-select-ul{
+    position: absolute;
+    max-height:190px;
+    _height:190px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    top:31px;
+    left:0px;
+    overflow-y: auto;
+    _overflow-y:auto !important;
+    padding:0px;
+    margin:0px;
+    width: 100%;
+    z-index:2014;
+    display: none;
+}
+  
+.self-select-wrapper .self-select-ul li{
+    list-style: none;
+	position:relative;
+}
+  
+.self-select-ul .self-select-option{
+    line-height: 28px;
+    cursor: pointer;
+    display: block;
+    padding-left:10px;
+	padding-right:10px;
+    text-decoration: none;
+    color:#000;
+}
+  
+.self-select-ul .self-select-option:hover{
+    background-color: #316ac5;
+	color: #ffffff;
+}
+
+.self-select-ul .self-select-data {
+	display:inline-block;	
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	width: 210px;
+}
+
+.signal {
+	
+	background:url(img/wifi_strength.png) 0 no-repeat;
+	width: 20px;
+	height: 20px;
+	float: right
+}
+
+.signal_4 {
+	background-position: 0 7px;		
+}
+
+.signal_3 {
+	background-position: -20px 7px;		
+}
+
+.signal_2 {
+	background-position: -40px 7px;		
+}
+
+.signal_1 {
+	background-position: -60px 7px;		
+}
+#wifiHandset select {width: 270px;}
+</style>
+<script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  
+  
+  
+  <body>
+        <fieldset class="ifmwrap-wisp">
+        	<div class="legend-main">
+            	<div class="control-group">
+                	<label class="control-label">Wireless Repeating:</label>
+                    <div class="controls">
+                    	<div id="clientApEn" class="btn-off"></div>
+                    </div>
+                </div>
+                <div id="wisp_set" class="none">
+                    <div class="control-group">
+                        <label class="control-label">Mode:</label>
+                        <div class="controls">
+                            <label class="radio" id="wifiWorkMode1">
+                                <input type="radio" name="wifiWorkMode" id="wifiWorkMode1" value="wisp">WISP</label>
+                            <label class="radio" id="wifiWorkMode2">
+                                <input type="radio" name="wifiWorkMode" id="wifiWorkMode2" value="apclient">Universal Repeater</label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Base Station WiFi Name:</label>
+                        <div class="controls">
+                            <select id="apSsid" name="apSsid" class="input-medium none" style="width:270px;">
+                            </select>
+                            <label class="link" style="float:right;margin-top:4px;"><a id="scan">Scan again</a></label>
+                            <div class="self-select-wrapper hidden" id="apSsid2">
+                                 <input type="hidden" class="self-select-hide">
+                                 <span class="self-select-display">
+                                  <i class="self-select-arrow-down"></i>
+                                  <span class="self-select-text" data-val="0"></span>
+                                 
+                                 </span>
+                                 <ul class="self-select-ul">
+
+                                 </ul>
+                            </div>
+                            
+                            
+                            <div class="main-loadding none" style="width:auto;height:30px;margin-top:-35px;">
+                            	<img src="img/loading.gif">
+								<span style="display:inline-block; margin-top:4px; vertical-align:text-bottom;height:30px;font-size:14px;color:#f90;margin-left:10px; font-weight:bold;">Scanning…</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="wifiHandset" class="none">
+                        <div class="control-group">
+                            <label class="control-label">WiFi Name:</label>
+                            <div class="controls">
+                                <input type="text" id="handset_ssid" name="handset_ssid" maxlength="64" class="input-medium" style="width:253px;">
+                            </div>
+                        </div>  
+
+                        <div class="control-group">
+                            <label class="control-label">band:</label>
+                            <div class="controls">
+                                <select name="" id="wifi_chkHz">
+                                    <option value="0">2.4G</option>
+                                    <option value="1">5G</option>
+                                </select>
+                            </div>
+                        </div>  
+
+                        <div class="control-group">
+                            <label class="control-label">Encryption method:</label>
+                            <div class="controls">
+                                <select name="" id="wpapsk_type">
+                                    <option value="none">NONE</option>   <!-- 选择此项隐藏加密规则 -->
+                                    <option value="wpa">WPA-PSK</option>
+                                    <option value="wpa2">WPA2-PSK</option>
+                                    <option value="wpa&wpa2">WPA-PSK/WPA2-PSK</option>
+                                </select>
+                            </div>
+                        </div>  
+
+                        <div class="control-group" id="wpapsk_crypto_wrap">
+                            <label class="control-label">Encryption algorithm:</label>
+                            <div class="controls">
+                                <select name="" id="wpapsk_crypto">
+                                    <option value="aes">AES</option>
+                                    <option value="tkip">TKIP</option>
+                                    <option value="tkip&aes">TKIP&AES</option>
+                                </select>
+                            </div>
+                        </div>  
+                    </div>
+
+                    <div class="control-group none" id="pwd_set">
+                        <label class="control-label">Base Station WiFi Password:</label>
+                        <div class="controls">
+                            <input type="text" id="apPassword" name="apPassword" maxlength="64" class="input-medium" style="width:253px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="red page-err" id="msg-err">&nbsp;</div>
+                </div>
+                <div class="btn-group control-group">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/wisp.js"></script>
+</body></html>

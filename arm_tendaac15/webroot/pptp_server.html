@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-pptp">
+        	<div class="legend-main">
+            	<div class="control-group">
+                	<label class="control-label">PPTP Server:</label>
+                    <div class="controls">
+                    	<div id="serverEn" class="btn-off"></div>
+                    </div>
+                </div>
+                <div id="pptp_set" class="none">
+                    <div class="control-group">
+                        <label class="control-label">Address Pool:</label>
+                        <div class="controls">
+                            <input type="text" id="startIp" class="validatebox input-medium" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;ip&quot;}">~<span id="endNet">192.168.0.</span><input type="text" id="endIp" class="validatebox input-mic-mini" maxlength="3" required="required" data-options="{&quot;type&quot;:&quot;num&quot;, &quot;args&quot;:[1,254]}">
+                        </div> 
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">MPPE Encryption:</label>
+                        <div class="controls">
+                            <div id="mppeEn" class="btn-off"></div>
+                        </div>
+                    </div>
+
+                    <div class="control-group" id="mppeNumWrap">
+                        <label class="control-label">MPPE Encryption Bits:</label>
+                        <div class="controls">
+                            <label class="radio" for="mppe40">
+                                <input type="radio" name="mppeNum" id="mppe40" value="40">40</label>
+                            <label class="radio" for="mppe120">
+                                <input type="radio" name="mppeNum" id="mppe120" value="128">128</label>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="table-scroll-right">
+                        <table class="table">
+                            <tbody><tr>
+                                <th>Status</th>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <!-- <th>是否为网络</th>
+                                <th>内网网段</th>
+                                <th>Subnet Mask</th>
+                                <th>Description</th> -->
+                                <th>Action</th>
+                            </tr>
+                            <tr id="ruleAddTr">
+                                <td>--</td>
+                                <td><input type="text" id="userName" class="input-small" maxlength="32" style="width:80px;"></td>
+                                <td><input type="text" id="password" class="input-small" maxlength="32" style="width:80px;"></td>
+                                <!-- <td><label class="radio"><input type="checkbox" id="netEn"></label></td>
+                                <td><input type="text" id="serverIp" class="input-small" maxlength="15"></td>
+                                <td><input type="text" id="serverMask" class="input-small" maxlength="15"></td>
+                                <td><input type="text" id="remark" class="input-small" maxlength="32" style="width:80px;"></td> -->
+                                <td><input type="button" id="addBtn" value="Add" class="btn btn-small add"></td>
+                            </tr>
+                            </tbody><tbody id="serverList">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="control-group">
+                        <div class="red page-err" id="msg-err">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/pptp_server.js"></script>
+</body></html>

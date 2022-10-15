@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-dhcp">
+        	<div class="legend-main">
+            	<div class="control-group">
+                	<label class="control-label">DLNA Service</label>
+                    <div class="controls">
+                    	<div id="dlnaEn" class="btn-off"></div>
+                    </div>
+                </div>
+                <div id="dlna_set" class="none">
+                    <div class="control-group">
+                        <label class="control-label">Device Name:</label>
+                        <div class="controls">
+                           <input type="text" id="deviceName" data-options="{&quot;type&quot;:&quot;pwd&quot;, &quot;args&quot;:[5,15]}"  required="required" class="input-medium validatebox" maxlength="15">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="red page-err" id="msg-err">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/dlna.js"></script>
+</body></html>

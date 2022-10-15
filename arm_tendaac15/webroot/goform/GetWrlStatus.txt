@@ -1,0 +1,1 @@
+{"schedWifiEn":"0","wispEn": "1","wpsEn": "1"}

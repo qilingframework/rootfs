@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-lan">
+        	<div class="legend-main">
+            	<div class="control-group">
+                	<label class="control-label">LED Control:</label>
+                    <div class="controls">
+                    	<label class="radio" for="ledType1">
+                            <input type="radio" name="ledType" id="ledType1" value="open">Keep ON</label>
+                        <label class="radio" for="ledType2">
+                            <input type="radio" name="ledType" id="ledType2" value="close">Keep OFF</label>
+                        <label class="radio" for="ledType3">
+                            <input type="radio" name="ledType" id="ledType3" value="time">Timed OFF</label>
+                    </div>
+                </div>
+                <div id="time_set" class="none">
+                    <div class="control-group">
+                        <label class="control-label">OFF Time: </label>
+                        <div class="controls">
+                            <select name="startHour" id="startHour" class="input-mini"></select>:<select name="startHour" id="startMin" class="input-mini"></select>~<select name="startHour" id="endHour" class="input-mini"></select>:<select name="startHour" id="endMin" class="input-mini"></select>&nbsp;
+                        </div>
+                    </div>
+                    <p class="txt-center text-warning none" id="timeUpTip">The Timed OFF takes effect when the system time synchronizes the Internet time.</p>
+                    <div class="control-group">
+                        <div class="red page-err" id="msg-err">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/system_led.js"></script>
+</body></html>

@@ -1,0 +1,26 @@
+{
+"list":
+[
+{"name":"USB1(Tendada)",
+"memory":"60%",
+"memoryUnUse": "0.000878G"},
+{"name":"USB1(Tenda)",
+"memory":"16.68%",
+"memoryUnUse": "29.26G"}
+,
+{"name":"USB1(Tenda)",
+"memory":"16.68%",
+"memoryUnUse": "2029.26G"}
+,
+{"name":"USB1(Tenda)",
+"memory":"16.68%",
+"memoryUnUse": "1029.26G"}
+],
+"password":"1asdf23",
+"ftpLink":"192.168.9.2",
+"premitEn":"1",
+"internetLink":"122.22.22.22",
+"outPort":"21",
+"internetPort": "5678",
+"wl_mode": "apclientd"
+}

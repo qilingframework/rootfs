@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-dmz">
+        	<div class="legend-main">
+            	<div class="control-group">
+                	<label class="control-label">UPnP:</label>
+                    <div class="controls">
+                    	<div id="upnpEn" class="btn-off"></div>
+                    </div>
+                </div>
+                <div id="upnpList" class="none">
+                    <table class="table">
+                        <tbody><tr>
+                            <th>Remote Host</th>
+                            <th>External Port</th>
+                            <th>Internal Host</th>
+                            <th>Internal Port</th>
+                            <th>Protocol</th>
+                        </tr>
+                        </tbody><tbody id="upnpBody">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/upnp_config.js"></script>
+</body></html>

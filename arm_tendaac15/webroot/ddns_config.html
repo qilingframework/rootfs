@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-dhcp">
+        	<div class="legend-main">
+            	<div class="control-group">
+                	<label class="control-label">DDNS:</label>
+                    <div class="controls">
+                    	<div id="ddnsEn" class="btn-off"></div>
+                    </div>
+                </div>
+                <div id="ddns_set" class="none">
+                    <div class="control-group">
+                        <label class="control-label">Service Provider:</label>
+                        <div class="controls">
+                            <select id="serverName" class="input-medium">
+                                <option value="no-ip.com">no-ip.com</option> 
+                                <option value="3322.org">3322.org</option> 
+                                <option value="dyn.com/dns/">dyndns.org</option>
+                            </select>
+                            <span><a class="text-link" id="btnLink">Register</a></span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Username:</label>
+                        <div class="controls">
+                            <input type="text" id="ddnsUser" required="required" class="input-medium validatebox" maxlength="32" data-options="{&quot;type&quot;:&quot;fh1901Ascii&quot;}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Password:</label>
+                        <div class="controls">
+                            <input type="text" id="ddnsPwd" required="required" class="input-medium validatebox" maxlength="32" data-options="{&quot;type&quot;:&quot;fh1901Ascii&quot;}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Domain Name: </label>
+                        <div class="controls">
+                            <input type="text" id="ddnsDomain" required="required" class="input-medium validatebox" maxlength="64" data-options="{&quot;type&quot;:&quot;domain&quot;}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="red page-err" id="msg-err">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/ddns_config.js"></script>
+</body></html>

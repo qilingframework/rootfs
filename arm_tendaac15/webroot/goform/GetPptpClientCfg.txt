@@ -1,0 +1,15 @@
+{
+"clientEn":"1",
+"clientType":"pptp",
+"clientIp":"192.72.23.12",
+"clientMask":"255.255.255.0",
+"domain":"baidu.com",
+"userName":"123",
+"password":"456",
+"vpnStatus":"1",
+"vpnIp": "122.22.22.2",
+"clientMppe":"0",
+"clientMppeOp": "40",
+"wanConnType": "1",
+"wanUser": "pppoeuser"
+}

@@ -1,0 +1,16 @@
+{
+
+"deviceName":"FH1901",
+"clientNum":6,
+"blackNum":6,
+"wanStatus":"2311007",
+"wl24gEn": "1",
+"wl24gName":"fcniuxasdfasdfasdfasdfasdfasdfasdfabababab",
+"wl24gsec":"1",
+"wl5gEn":"1",
+"wl5gName":"fcniux5G",
+"wl5gsec":"0",
+"usbUse": "166.2342345",
+"memoryUnUse": "15025.99G",
+"lineup": "1|1|0|1"
+}

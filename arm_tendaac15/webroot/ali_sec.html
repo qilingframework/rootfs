@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+  		<fieldset class="ifmwrap-ali">
+        	<div class="legend-main-ali" style="padding-top:40px;">
+            	<input type="hidden" id="currentMac">
+            	<div class="control-group">
+                	<label class="control-label">阿里安全保护：</label>
+                    <div class="controls">
+                    	<div id="dnsEnable" class="btn-off"></div>
+                    </div>
+                </div>
+                <table id="table_head" class="table table-fixed" style="width:740px;">
+                    <thead>
+                        <tr><th width="50px" class="ali-th">索引</th>
+                        <th class="notd"></th>
+                        <th class="ali-th">拦截时间</th>
+                        <th class="notd"></th>
+                        <th class="ali-th">保护动作</th>
+                        <th class="notd"></th>
+                        <th class="ali-th fixed" width="150px">拦截网址</th>
+                        <th class="notd"></th>
+                        <th class="ali-th">备注</th>
+                    </tr></thead>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset class="scroll-right">
+        	<div class="legend-main-ali">
+                <div id="table-list">
+                    <table class="table table-fixed" style="width:740px;">
+                        <thead>
+                        	<tr class="row1">
+                            <th width="50px"></th>
+                            <th class="notd"></th>
+                            <th></th>
+                            <th class="notd"></th>
+                            <th></th>
+                            <th class="notd"></th>
+                            <th class="fixed" width="150px"></th>
+                            <th class="notd"></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody id="list">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/ali_sec.js"></script>   
+</body></html>

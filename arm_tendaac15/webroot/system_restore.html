@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset>
+        	<form name="frmSetup" method="POST" action="goform/SysToolRestoreSet" enctype="multipart/form-data">
+            <input type="hidden" name="action" value="0">
+            	<div class="legend-main" style="padding-top:45px;">
+                    <div class="legend-message">You can update your router's settings with the saved backup file.</div>
+                    <div class="btn-group">Select a file:<input type="file" name="fileCfg" id="fileCfg">
+                    </div>
+                </div>
+       		</form>
+            <div class="btn-group">
+            	
+            	<input type="button" class="btn btn-normal" id="sys_restore" value="Restore ">
+            </div>
+            
+        </fieldset>
+  
+  <script src="js/libs/j.js"></script>
+  <script src="js/system.js"></script>
+</body></html>

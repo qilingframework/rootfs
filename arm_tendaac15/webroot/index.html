@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <title>Tenda WiFi</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Le styles -->
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    
+    <!--[if IE 6]>
+        <link href="css/ie6.css" rel="stylesheet">
+        <script src="js/libs/DD_belatedPNG_0.0.8a-min.js"></script>
+        <script>
+            DD_belatedPNG.fix('*');
+        </script>
+    <![endif]-->
+
+    <script>var img1 = new Image();
+		img1.src = "img/ok.png";
+		var img2 = new Image();
+		img2.src = "img/loading-round.gif";
+		var img3 = new Image();
+		img3.src = "img/loading.gif";</script>
+
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  
+  <body class="index-body">
+<noscript>
+  <div style="color:firebrick">
+    <h1>Error! The browser does not support JavaScript. </h1>
+    <h4>Please enable JavaScript or try another browser compatible with JavaScript to experience more features of the device.
+    </h4>
+  </div>
+</noscript>
+  	<!--<div id="step1">
+        <div class="masthead" style="background:#fff;">
+          <div class="container head-inner">
+            <img class="brand" src="img/logo-gray.png"></img>
+            <div class="brand-line"></div>
+          </div>
+        </div>
+        <div class="mastbody">
+            <div class="wel-text">
+                <div class="wel-title1">欢迎使用</div>
+                <div class="wel-title2">腾达无线路由器</div>
+            </div>
+            <div style="position:relative; margin:auto;">
+            	<div style="position:absolute; width:100%; top:150px; background:url(img/product_shadow.png) repeat; z-index:-1; height:18px;"></div>
+                <img id="product_name" src="">
+                
+            </div>
+            <div class="wel-button">
+                <input type="button" id="start-btn" class="btn btn-normal" value="开始体验">
+            </div>
+        </div>
+    </div>-->
+
+    <div id="step2">
+    	<div class="masthead">
+          <div class="container head-inner">
+            <img class="brand" src="img/logo-gray.png">
+            <!-- 语言选择 -->
+            <div class="lang" id="lang">
+                <a class="lang-toggle" id="langToggle"><span>中文</span><b class="caret"></b></a>
+                <ul class="lang-menu none" id="langMenu">
+                    <li><a data-country="en">English</a></li>
+                    <li><a data-country="cn">中文</a></li>
+                    <li><a data-country="zh">繁體中文</a></li>
+                </ul>
+            </div>
+            <!-- 语言选择over -->
+          </div>
+        </div>
+        <div id="first_begin">
+        	 <div class="mastbody">
+
+            <a href="http://www.tenda.com.cn/" target="_blank" class="index-logo"><img src="img/index-logo.png" alt="tenda logo" width="199" height="45"></a>
+            <div class="wel-text">
+                <div class="wel-title1" data-lang="Welcome to">Tenda Router </div>
+                <div class="wel-title2" data-lang="Tenda Wireless Router">Quick Setup Wizard</div>
+            </div>
+            <div style="position:relative; margin:auto;">
+            	<!-- <div style="position:absolute; width:100%; top:150px; background:url(img/product_shadow.png) repeat; z-index:-1; height:18px;"></div> -->
+                <!-- <img id="product_name" src="img/product.png" width="250" height="310" style="padding-left:50px;"> -->
+                
+            </div>
+
+
+            <div class="wel-button mastbottom" style="padding:80px 0 146px 0;">
+               <input type="button" id="start-btn" class="btn btn-normal" value="Start">
+            </div>
+        </div>
+        </div>
+    	<!--<div class="masthead">
+            <div class="container head-inner head-inner-top">
+                <img class="brand" src="img/logo-white.png"></img>
+            	<div class="brand-text"></div>
+            </div>
+        </div>-->
+        <div id="net_find" class="none">
+        	<div class="mastbody">
+            	<div class="loadding"></div>
+                <div class="loadding-text">The system is detecting your connection type. Please wait…</div>
+            </div>
+        </div>
+        <div id="net_setting" class="none">
+            <div class="mastbody" style="margin-top:0;">
+                <div style="margin-top:100px;">
+                    <img src="./img/router1_images2.gif">
+                </div>
+                <div class="main-text">Plug the Ethernet cable into the WAN port!</div>
+            </div>
+        </div>
+
+        <div id="ppoe_setting" class="none">
+            <div class="mastbody">
+                <div class="h2-title">Please enter the ISP Username and Password</div>
+                <div class="input-group">
+                    <div class="control-group password-box">
+                        <label class="control-label user" for="username"></label>
+                        <div class="controls">
+                            <input type="text" id="username" class="input-text" maxlength="128">
+                        </div>
+                    </div>
+                    <div class="control-group password-box">
+                        <label class="control-label pass" for="password"></label>
+                        <div class="controls">
+                            <input type="password" id="password" class="input-text" maxlength="128">
+                        </div>
+                    </div>
+                    <div class="red" id="message-error">&nbsp;</div>
+                    
+                </div>
+            </div>
+		</div>
+        <div id="dhcp_setting" class="none">
+            <div class="mastbody">
+                <div class="notice">
+                    <div class="notice-message">No need to dial up as detected</div>
+                </div>
+            </div>
+        </div>
+        <div id="static_setting" class="none">
+            <div class="mastbody">
+                <div class="notice">
+                    <div class="notice-message" style="padding-top:10px; font-size: 16px;">Your connection type may be static IP as detected. Please set up it manually in the Internet Settings page.</div>
+                </div>
+            </div>
+        </div>
+        <div id="wifi_setting" class="none">
+        	<div class="mastbody">
+                <div class="h2-title">Wireless Settings</div>
+                <div class="input-group">
+                    <div class="control-group password-box">
+                        <label class="control-label country" for="country"></label>
+                        <div class="controls">
+                            <div class="select-wrap">
+                                <select id="country" class="input-text" style="height:30px;">
+                                    <option value="US">America</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="AT">Austria</option>
+                                    <option value="BA">Bosnia-Herzegovina</option>
+                                    <option value="BR">Brazil</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="CN">China</option>
+                                    <option value="CZ">Czech</option>
+                                    <option value="FR">France</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="GR">Greece</option>
+                                    <option value="HK">HongKong</option>
+                                    <option value="HU">Hungary</option>
+                                    <option value="ID">Indonesia</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="MX">Mexico</option>
+                                    <option value="NO">Norway</option>
+                                    <option value="PL">Poland</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="RO">Romania</option>
+                                    <option value="RU">Russia</option>
+                                    <option value="SA">Saudi Arabia</option>
+                                    <option value="RS">Serbia</option>
+                                    <option value="SI">Slovenia</option>
+                                    <option value="ZA">South Africa</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="TW">Taiwan</option>
+                                    <option value="TH">Thailand</option>
+                                    <option value="TR">Turkey</option>
+                                    <option value="GB">U.K.</option>
+                                    <option value="AE">UAE</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group password-box">
+                        <label class="control-label wifi" for="ssid"></label>
+                        <div class="controls">
+                            <input type="text" id="ssid" class="input-text" maxlength="29">
+                        </div>
+                    </div>
+                    <div class="control-group password-box">
+                        <label class="control-label pass" for="wrlPassword"></label>
+                        <div class="controls">
+                            <input type="password" id="wrlPassword" class="input-text" maxlength="32">
+                        </div>
+                    </div>
+                    <div class="control-group" style="text-align:left"><label class="checkbox" for="changePwdEn"><input type="checkbox" id="changePwdEn">Set up the login password to the same as the WiFi password</label></div>
+                    <div class="control-group password-box">
+                        <label class="control-label pass" for="loginPwd"></label>
+                        <div class="controls">
+                            <input type="password" id="loginPwd" class="input-text" maxlength="32">
+                        </div>
+                    </div>
+                    <div class="control-group password-box" id="power_setting">
+                        <label class="control-label country" for="power"></label>
+                        <div class="controls">
+                            <select id="power" class="input-text" style="height:30px;">
+                                <option value="high">Strengthen</option>
+                                <option value="low">Low Power</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="message-ssid" id="message-ssid">&nbsp;</div>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="btn_control" class="mastbottom none">
+            <div class="button-group">
+                <div class="wel-button">
+                    <input type="button" id="step-next" class="btn btn-normal" value="Continue">
+                </div>
+            </div>
+            <div class="button-continue">
+                <a id="step-over" href="javascript:void(0)">Skip</a>
+            </div>
+        </div>
+        <div id="waiting" class="none">
+        	<div class="mastbody">
+                <div class="loadding">
+                    <div class="loadding-number">10</div>
+                </div>
+                <div class="loadding-text en-none" style="margin-bottom:6px;">Configured</div>
+                <div class="loadding-text">Connecting…please wait…</div>
+            </div>
+        </div>
+        <div id="confirmNext" class="none">
+        	<div class="index-dailog">
+                <div class="fopare-ifmwrap-title">
+                    <div id="head_title" class="iframe-title" style="margin-top:15px;">Tips</div>
+                    <div class="iframe-close" style="margin-top:10px;">×</div>
+                </div>
+                <div style="margin-top:40px;">
+                    <div class="dialog-text">Your WiFi has no password.</div>
+                	<div class="dialog-text">To secure your wireless network, it is advisable to set up a WiFi password.</div>
+                </div>
+                <div class="btn-group">
+                	<input type="button" id="back" class="btn btn-normal" value="Set">
+                    <input type="button" id="continue" class="btn-normal btn-normal-gray" value="Not Now">
+                </div>
+            </div>
+        </div>
+        <div id="set_ok" class="none">
+        	<div class="mastbottom">
+            	<div class="loadding-ok">
+                	<img src="img/ok_connected.png">
+                </div>
+           
+                <div id="connected" class="loadding-text" style="width:500px; margin:0px auto 16px;" data-lang="Congratulations! You can surf the Internet.">You’re all set! You can now connect to</div>
+                <div class="loadding-text" style="width:450px; margin:auto;" data-lang="Please connect to the WiFi name"></div>
+                <div class="ssid-text" style="margin-top: 20px; margin-bottom:6px;">
+                	&nbsp;&nbsp;&nbsp;&nbsp;<span id="ssid_2g">MagicRouter_9516</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <div>
+                	<span class="loadding-text">or</span>&nbsp;&nbsp;
+                    <span class="ssid-text" id="ssid_5g">MagicRouter_9516_5G</span>
+                </div>
+                <label id="connected-tip" class="help-block" style="color:#999999; margin-top:10px;font-size:16px;">For additional features or to change settings, click on the "Advanced" button below.</label>
+                <div class="button-group" style="margin-top:20px;">
+                    <div class="wel-button">
+                        <input type="button" class="btn btn-normal" id="more_set" style="font-size:18px;" data-lang="For more..." value="Advanced">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div id="code_set" class="none">
+        	<div class="mastbody">
+                <div class="square">
+                	<img src="http://192.168.0.1/img/square.png">
+                    <div class="two-code">
+                    	<img src="http://192.168.0.1/img/code.png">
+                    </div>
+                </div>
+                <div class="loadding-text" style="margin-bottom:6px;">扫描下载&quot;阿里WiFi&quot;应用</div>
+                <div class="loadding-text">随时管理您的路由</div>
+                <div class="net-link">
+                    <span class="net-link-text">或点击连接</span>
+                    <span class="net-text"><a id="url_link" href="javascript:void(0)">http://wifi.yunos.com/aliwifi/down.htm</a></span>   
+                </div>
+            </div>
+        </div>-->
+    </div>
+    <div class="save-msg none">
+        <div class="save-loading"></div>
+        <div id="page-message"></div>
+    </div>
+  <script src="js/libs/j.js"></script>
+  <script src="js/libs/public.js"></script>
+  <script src="js/libs/reasy-ui-1.0.3.js"></script>
+  <script src="js/libs/time-zone.js"></script>
+  <script src="js/index.js"></script>
+</body></html>

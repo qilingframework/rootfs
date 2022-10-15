@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html style="background-color: #FFF;"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Success</title>
+<link rel="stylesheet" type="text/css" href="css/reasy-ui.css">
+<script src="js/libs/j.js"></script>
+<script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+<body class="redirectBody">
+<h2></h2>
+
+<script>window.onload = function() {		
+		var Msg = location.search.substring(1);
+		switch (Msg) {
+			case "1":
+				top.$.progress.showPro("upgrade",_("Upgrading…please wait…"));
+				break;
+			case "2":
+				top.$.progress.showPro("restore", _("Restoring…please wait…"));
+				break;
+			case "3":
+				top.$.progress.showPro("reboot");
+				break;
+			case "4":
+				top.$.progress.showPro("restoreDefault", _("Resetting…please wait…"),"tendawifi.com");
+				break;
+		}
+		//top.location = "system_setting.asp";
+	}</script>
+
+</body></html>

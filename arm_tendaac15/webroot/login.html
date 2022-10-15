@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <title>Tenda Web Master</title>
+    <meta name="description" content="login">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="author" content="">
+    
+    <!-- Le styles -->
+    <link href="css/reasy-ui.css" rel="stylesheet">
+	<style>.help-inline {
+			margin-top: 10px;
+			display: block;
+			margin-left: 170px;
+			text-align: left;
+			vertical-align: middle;
+			*margin-left: 190px;
+		}</style>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+
+</head>
+  <body class="login-body">
+  <noscript>
+  <div style="color:firebrick">
+    <h1>Error! The browser does not support JavaScript. </h1>
+    <h4>Please enable JavaScript or try another browser compatible with JavaScript to experience more features of the device.
+    </h4>
+  </div>
+</noscript>
+    <!-- <div>
+      <div class="container head-inner">
+        <a class="brand" href="#" title="Tenda"></a>
+        <div class="easy-logo"></div>
+      </div>
+    </div> -->
+    <div class="container">
+      <div class="login-main">
+        <form class="form-login wrap">
+        	<input type="hidden" id="username" value="admin">
+          <input type="hidden" id="password" value="admin">
+        	<div class="login">
+                <!-- <input id="login-password" type="password" class="validatebox" maxlength="32"> -->
+              <img src="img/main-logo.png" width="159" height="35">
+              <div class="input-group mastbody">
+                
+                <div class="control-group password-box">
+                    <label class="control-label country" for="country"></label>
+                    <div class="controls">
+                      <div class="select-wrap">
+                        <select id="country" class="input-text">
+                            <option value="en">English</option>
+                            <option value="cn">中文</option>
+                            <option value="zh">繁体中文</option>
+                        </select>
+                      </div>
+                    </div>
+                </div>
+                <div class="control-group password-box">
+                    <label class="control-label pass" for="wrlPassword"></label>
+                    <div class="controls">
+                        <input id="login-password" type="password" class="input-text validatebox" maxlength="32">
+                    </div>
+                </div>                    
+                <input type="submit" id="subBtn" class="btn login-btn " value="Login">
+              </div>
+            	
+          </div>
+        </form>
+
+        <div class="forget-tip">
+          <p class="forget-handle" id="forgetBtn">Forgot password?<b class="caret"></b>
+          &nbsp;&nbsp;
+            <span id="login-message" class="text-error">&nbsp;</span>
+          </p>
+          <p class="forget-more none" id="forgetMore">
+          &gt; <span>Restore the router and reset the login password if you forget it.</span><br>
+          &gt; <span>Method: Press and hold the RESET button for about 8 seconds. (That will default the router to factory settings.)</span>
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+</head>
+<script>
+var lang = B.getLang(),
+    langSltEle = document.getElementById("country");
+
+langSltEle.value = lang;
+langSltEle.onchange = function() {
+    if (this.value != lang) {
+        B.setLang(this.value);
+        location.reload();
+    }
+}
+</script>
+<script src="js/libs/j.js"></script>
+<script src="js/libs/reasy-ui-1.0.3.js"></script>
+<script src="js/login.js"></script>
+
+<!--[if IE 6 ]>
+
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; filter: alpha(opacity=10); z-index:100001;"></div>
+    
+    <div style="position: absolute; top: 30%; left: 50%; margin-left: -250px; padding: 50px 0; text-align: center; width:500px;  color: red; background: #333;  filter: alpha(opacity=80);">
+      <h1 style="font-size: 24px; padding-bottom:10px;">Update your browser</h1>
+      <p>This browser or lower (such as ie 6) cannot support the router's configuration.</p>
+    </div>
+
+
+<script>
+    setTimeout(function() {$("#login-password, #login-password_").blur();}, 200);
+    $("select").addClass("none")
+</script>
+<![endif]-->
+</body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-mac">
+        	<div class="legend-main">
+                <div class="control-group">
+                	<label class="control-label">MTU:</label>
+                    <div class="controls">
+                    	<input type="text" id="wanMTU" style="width:190px;" name="wanMTU" maxlength="4" required="required" class="validatebox input-small" data-options="{&quot;type&quot;: &quot;num&quot;, &quot;args&quot;:[576,1500]}">
+                    </div>
+                </div>
+                <div class="control-group">
+                	<label class="control-label">WAN Speed:</label>
+                    <div class="controls">
+                    	<select id="wanSpeed" class="input-large">
+                        	<option value="0">1000M AUTO</option>
+                            <option value="1">10M FDX </option>
+                            <option value="2">10M HDX</option> 
+                            <option value="3">100M FDX </option>
+                            <option value="4">100M HDX</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="mac_set">
+                    <div class="control-group">
+                        <label class="control-label">MAC Address:</label>
+                        <div class="controls">
+                            <select id="cloneType" name="cloneType" class="input-large">
+                            	<option value="0">Default</option>
+                                <option value="1">Clone MAC Address</option>
+                                <option value="2">Manual  </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="macaddress" class="control-group none">
+                    	<label class="control-label"></label>
+                        <div id="mac-address" class="controls help-block controls-text">
+                        	
+                        </div>
+                    </div>
+                    <div class="control-group" id="other-mac">
+                        <label class="control-label"></label>
+                        <div class="controls">
+                            <input type="text" name="mac" id="mac" maxlength="17" required="required" class="validatebox" style="width:193px;" data-options="{&quot;type&quot;:&quot;mac&quot;}">
+                        	<!-- <span class="help-block">MAC Address Format: XX:XX:XX:XX:XX:XX</span> -->
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="red page-err" id="msg-err"></div>
+                    </div>
+                </div>	
+                <div class="btn-group">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/mac_clone.js"></script>   
+</body></html>

@@ -1,0 +1,11 @@
+[{"netControlEn":"1"},
+{"hostName":"机子1asdf' \"asfasfasdfasfasdf","ip":"192.168.0.2","mac":"22:22:22:22:22:22","upSpeed":"100026.36","downSpeed":"113","limitUp":"1000015","limitDown":"0"},
+{"hostName":"机子2","ip":"192.168.102.103","mac":"22:22:22:22:22:23","upSpeed":"2000","downSpeed":"267","limitUp":"51456","limitDown":"33"},
+{"hostName":"机子3","ip":"192.168.0.4","mac":"22:22:22:22:22:24","upSpeed":"212","downSpeed":"288","limitUp":"51","limitDown":"33"},
+{"hostName":"机子4","ip":"192.168.0.5","mac":"22:22:22:22:22:25","upSpeed":"32","downSpeed":"713","limitUp":"51","limitDown":"33"},
+{"hostName":"机子5","ip":"192.168.0.6","mac":"22:22:22:22:22:26","upSpeed":"168","downSpeed":"413","limitUp":"51","limitDown":"33"},
+{"hostName":"机子6","ip":"192.168.0.7","mac":"22:22:22:22:22:27","upSpeed":"178","downSpeed":"22","limitUp":"51","limitDown":"33"},
+{"hostName":"机子8","ip":"192.168.0.7","mac":"22:22:22:22:22:28","upSpeed":"178","downSpeed":"22","limitUp":"0","limitDown":"0"}
+
+
+]

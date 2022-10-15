@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body onselectstart="return false">
+        <fieldset class="status-device">
+        	<div class="legend-main">
+            	<div class="control-group" style="height:30px;">
+                	<label class="control-label">Device Name:</label>
+                    <div class="controls controls-text">
+                    	<span id="deviceName" style="width:120px;"></span>
+                    	<span style="margin-left:40px;"><input type="button" id="device_edit" class="btn btn-mini" value="Edit"></span>
+                        <!--<span style="margin-left:30px;" id="addMac" class="none"><input type="button" id="add" class="btn btn-normal-restore btn-mini" style="width:120px;" value="禁止无线接入"></span>将其与黑名单合在一起-->
+                        
+                        <span style="margin-left:30px;" id="addBlack"><input type="button" id="addToBlack" class="btn btn-normal-restore btn-mini none" style="width:90px;" value="加入黑名单"></span>
+                    </div>
+                </div>
+                <div class="control-group">
+                	<label class="control-label">Connected Time: </label>
+                    <div class="controls controls-text">
+                    	<span id="connectTime"></span>
+                    </div>
+                </div>
+               
+                <div class="control-group">
+                	<label class="control-label">Connection Type:</label>
+                    <div class="controls controls-text">
+                    	<label id="connectType"></label>
+                        <label style="margin-left:80px">IP Address:<span id="ip"></span></label>
+                   		<label style="margin-left:50px">MAC Address:<span id="mac"></span></label>
+                    </div>
+                </div>
+                <hr>
+                <div class="control-group">
+                	<label class="control-label">Speed Limit:</label>
+                    <div class="controls">
+                    	<div id="limitEn" class="btn-off"></div>
+                    </div>
+                </div>
+                <div class="control-group control-group-label">
+                	<label class="control-label">Total Download: </label>
+                    <div class="controls controls-text" id="downLoadTotal">
+                    </div>
+                </div>
+                <div class="control-group">
+                	<label class="control-label">Download Speed: </label>
+                    <div class="controls controls-text">
+                    	<span id="downLoadSpeed"></span>
+                        <div id="downSpeedLimit" class="down-line">
+                        	<div id="" class="speed-limit"></div>
+                            <div class="min-speed">0</div>
+                        </div>
+                        <div style="width:53px;height:8px;">
+                        	<div class="x-lables"></div>
+                        </div>
+                        <div class="max-speed" id="maxSpeed"></div>
+                    </div>
+                </div>
+                <div class="control-group control-group-label">
+                	<label class="control-label">Total Upload:</label>
+                    <div class="controls controls-text" id="upLoadTotal"></div>
+                </div>
+                <div class="control-group">
+                	<label class="control-label">Upload Speed:</label>
+                    <div class="controls controls-text">
+                    	<span id="upLoadSpeed"></span>
+                        <div id="upSpeedLimit" class="down-line">
+                        	<div class="speed-limit"></div>
+                            <div class="min-speed">0</div>
+                        </div>
+                        <div style="width:53px;height:8px;">
+                        	<div class="x-lables"></div>
+                        </div>
+                        <div class="max-speed" id="maxSpeedUp"></div>
+                    </div>
+                </div>
+                <div id="speed_limit" class="none">
+                    <div class="down-limit-msg">   
+                    </div>
+                    <div id="speed_info" class="speed-limit-info-left"></div>
+                </div>
+                
+				<div id="speed_limit_up" class="none">
+                    <div class="up-limit-msg">   
+                    </div>
+                    <div id="speed_info_up" class="speed-limit-info-left"></div>
+                </div>
+
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/device.js"></script>
+</body></html>

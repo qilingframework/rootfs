@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="sys-pwd">
+        	<div class="legend-main">
+            	<div class="control-group">
+                	<label class="control-label">Auto Reboot:</label>
+                    <div class="controls">
+                    	<div id="autoRebootEn" class="btn-off"></div>
+                    </div>
+                </div>
+                <p id="autoTip"></p>
+                <p class="text-warning txt-center" id="timeUpTip">The Auto Maintenance take effect when the system time synchronizes the Internet time.</p>
+                <div class="btn-group">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/system_automaintain.js"></script>
+</body></html>

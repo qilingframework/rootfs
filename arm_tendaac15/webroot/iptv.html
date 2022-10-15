@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-dmz">
+        	<div class="legend-main">
+            	<!-- <div class="control-group">
+                	<label class="control-label">IPTV:</label>
+                    <div class="controls">
+                    	<div id="iptvEn" class="btn-off"></div>
+                    </div>
+                </div> -->
+                <div id="iptv_set">
+                    <div class="control-group">
+                        <label class="control-label">Multicast:</label>
+                        <div class="controls">
+                            <div id="igmpEn" class="btn-off"></div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">STB:</label>
+                        <div class="controls">
+                            <div id="stbEn" class="btn-off" style="float:left;width:100%;"><div class="text-warning" style="margin-left:54px;margin-top:2px;">Tip: Please connect the STB to the Router's LAN3/IPTV port.</div></div>
+                        </div>
+                    </div>
+                    <div id="vlan_set" class="none">
+                        <div class="control-group">
+                            <label class="control-label">Select a zone:</label>
+                            <div class="controls">
+                                <select id="iptvType" class="input-medium">
+                                    <option value="none">No VLAN ID</option>
+                                    <option value="manual" data-lang="Custome VLAN">Custome</option>
+                                    <option value="shanghai">Shanghai</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="area_set" class="none">
+                            <div class="control-group">
+                                <label class="control-label"></label>
+                                <div class="controls">
+                                    <label class="radio" for=""><input type="radio" name="areaVlan" id="areaVlan1" value="51">51</label>&nbsp;&nbsp;
+                                    <label class="radio" for=""><input type="radio" name="areaVlan" id="areaVlan1" value="85" checked="">85</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="vlanList" class="table-scroll-right" style="max-height:280px;">
+                            <table class="table table-fixed">
+                                <tbody><tr>
+                                    <th style="width:40%" data-lang="Select a VLAN for upstream packets">VLAN for upstream packets</th>
+                                    <th class="fixed" style="width:30%">VLAN</th>
+                                    <th class="fixed">Action</th>
+                                </tr>
+                                </tbody><tbody id="vlanBody">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="red page-err" id="msg-err">&nbsp;</div>
+                </div>
+                <div class="btn-group">
+                    <input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/iptv.js"></script>
+</body></html>

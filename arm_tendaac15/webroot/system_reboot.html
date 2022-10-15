@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset>
+        	<form name="frmSetup" method="POST" action="/goform/SysToolReboot">
+            <input type="hidden" name="action" value="0">
+            	<div class="legend-main" style="padding-top:45px;">
+            		<div class="legend-message">The Router will disconnect from the Internet for about 45 seconds after reboot.</div>
+                </div>
+       		</form>
+            <div class="btn-group">
+            	<input type="button" class="btn btn-normal" id="sys_reboot" value="Reboot">
+            </div>
+        </fieldset>
+  
+  <script src="js/libs/j.js"></script>
+  <script src="js/libs/reasy-ui-1.0.3.js"></script>
+  <script src="js/system.js"></script>
+</body></html>

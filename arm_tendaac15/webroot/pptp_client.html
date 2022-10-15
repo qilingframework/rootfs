@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-pptp">
+        	<div class="legend-main">
+            	<div class="control-group">
+                	<label class="control-label">PPTP/L2TP Client:</label>
+                    <div class="controls">
+                    	<div id="clientEn" class="btn-off"></div>
+                    </div>
+                </div>
+                <div id="client_set" class="none">
+                    <div class="control-group">
+                        <label class="control-label">Client Type:</label>
+                        <div class="controls">
+                            <label class="radio" for="clientType1">
+                                <input type="radio" name="clientType" id="clientType1" value="pptp">PPTP</label>
+                            <label class="radio" for="clientType2">
+                                <input type="radio" name="clientType" id="clientType2" value="l2tp">L2TP</label>
+                        </div>
+                    </div>
+
+                    <div id="mppeWrap">
+                        <div class="control-group">
+                            <label class="control-label">MPPE Encryption:</label>
+                            <div class="controls">
+                                <div id="mppeEn" class="btn-off"></div>
+                            </div>
+                        </div>
+
+                        <div class="control-group" id="mppeNumWrap">
+                            <label class="control-label">MPPE Encryption Bits:</label>
+                            <div class="controls">
+                                <label class="radio" for="mppe40">
+                                    <input type="radio" name="mppeNum" id="mppe40" value="40">40</label>
+                                <label class="radio" for="mppe128">
+                                    <input type="radio" name="mppeNum" id="mppe128" value="128">128</label>
+                            </div>
+                        </div>                        
+                    </div>
+
+
+                    <div class="control-group">
+                        <label class="control-label">Server IP/DNS:</label>
+                        <div class="controls">
+                            <input type="text" class="input-medium validatebox" id="domain" maxlength="32" data-options="{&quot;type&quot;:&quot;domain&quot;}">
+                        </div>
+                    </div>
+                    <!-- <div class="control-group">
+                        <label class="control-label">服务器内网网段：</label>
+                        <div class="controls">
+                            <input type="text" class="input-medium validatebox" id="clientIp" required="required" data-options="{&quot;type&quot;:&quot;ip&quot;}" maxlength="15">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Subnet Mask: </label>
+                        <div class="controls">
+                            <input type="text" class="input-medium validatebox" id="clientMask" required="required" data-options="{&quot;type&quot;:&quot;mask&quot;}" maxlength="15">
+                        </div>
+                    </div> -->
+                    <div class="control-group">
+                        <label class="control-label">Username:</label>
+                        <div class="controls">
+                            <input type="text" class="input-medium validatebox" id="userName" maxlength="128" data-options='{"type":"ppoe"}'>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Password:</label>
+                        <div class="controls">
+                            <input type="text" class="input-medium validatebox" id="password" maxlength="128" data-options='{"type":"ppoe"}'>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Status:</label>
+                        <div class="controls controls-text">
+                            <span id="vpnStatus"></span>
+                            <input type="button" value="Refresh" class="btn btn-small" id="vpnStatusRefreshBtn">
+                        </div>
+                    </div>
+
+                    <div class="control-group none" id="vpnIpWrap">
+                        <label class="control-label" id="vpnIpLabel">Obtained PPTP Address:</label>
+                        <div class="controls controls-text" id="vpnIp"></div>
+                    </div>
+
+
+                    <div class="control-group">
+                        <div class="red page-err" id="msg-err">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/pptp_client.js"></script>
+</body></html>

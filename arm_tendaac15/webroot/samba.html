@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-cloud">
+        	<div class="legend-main samba">
+                <div id="usbList"></div>
+                <div class="control-group">
+                    <label class="control-label">Guest Account:</label>
+                    <div class="controls controls-text">
+                        <div id="userName">admin</div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Password:</label>
+                    <div class="controls">
+                        <input type="text" id="password" class="input-medium validatebox" maxlength="32" required="required" data-options="{&quot;type&quot;:&quot;pwd&quot;, &quot;args&quot;:[5,15]}">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">LAN devices visit:</label>
+                    <div class="controls controls-text">
+                        <div class="net-link">
+                            <a id="ftpLink"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label"></label>
+                    <div class="controls">
+                        <div class="net-link">
+                            <span id="localLink"></span>
+                            <!-- <span type="button" class="btn btn-small btn-color-white" id="localLinkCopyBtn" style="position:relative;">Copy</span>
+                            <span id="copyMsg" class="text-warning">复制成功</span> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="internet_set_wrap">
+                    <div class="control-group">
+                        <label class="control-label">Allow visits from the Internet:</label>
+                        <div class="controls">
+                            <div id="premitEn" class="btn-off"></div>
+                        </div>
+                    </div>
+                    <div class="control-group none" id="internet_set">
+                        <label class="control-label">WAN devices visit:</label>
+                        <div class="controls">
+                            <div class="net-link">
+                                <a><span id="internetLink"></span></a>:<input type="text" class="input-mini validatebox" id="internetPort" required="required" maxlength="5" data-options="{&quot;type&quot;: &quot;num&quot;, &quot;args&quot;:[1,65535]}" style="width:50px">
+                            </div>
+                            <!-- <div class='edit'></div> -->
+                        </div>
+                    </div>    
+                </div>
+
+
+
+                <div class="control-group">
+                    <div class="red page-err" id="msg-err">&nbsp;</div>
+                </div>
+                <div class="btn-group">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/libs/jquery.zclip.min.js"></script>
+    <script src="js/samba.js"></script>
+</body></html>

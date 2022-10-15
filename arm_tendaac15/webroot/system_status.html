@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+    <fieldset>
+        <fieldset class="ifmwrap-status" style="margin-top: 20px;">
+            <div class="legend-main">
+                <div class="legend">Basic Info</div>
+                <div class="control-group">
+                    <label class="control-label">System Time:</label>
+                    <div class="controls controls-text" id="adv_sys_time"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Running Time:</label>
+                    <div class="controls controls-text" id="adv_run_time"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Firmware Version:</label>
+                    <div class="controls controls-text" id="adv_firm_ver"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Hardware Version:</label>
+                    <div class="controls controls-text" id="adv_hard_ver"></div>
+                </div>
+                <hr style="margin-top:20px;">
+            </div>
+        </fieldset>
+        <fieldset class="ifmwrap-status" id="wanStatusWrap">
+            <div class="legend-main">
+                <div class="legend">WAN Status</div>
+                <div class="control-group">
+                    <label class="control-label">Connection Type:</label>
+                    <div class="controls controls-text" id="adv_connect_type"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Connection Status:</label>
+                    <div class="controls controls-text" id="adv_connect_status"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Connected Time:</label>
+                    <div class="controls controls-text" id="adv_connect_time"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">IP Address:</label>
+                    <div class="controls controls-text" id="adv_ip"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Subnet Mask:</label>
+                    <div class="controls controls-text" id="adv_mask"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Gateway:</label>
+                    <div class="controls controls-text" id="adv_gateway"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">DNS1:</label>
+                    <div class="controls controls-text" id="adv_dns1"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">DNS2:</label>
+                    <div class="controls controls-text" id="adv_dns2"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">MAC Address:</label>
+                    <div class="controls controls-text" id="adv_mac"></div>
+                </div>
+                <hr style="margin-top:20px;">
+            </div>
+        </fieldset>
+        <fieldset class="ifmwrap-status">
+            <div class="legend-main">
+                <div class="legend">LAN Status</div>
+                <div class="control-group">
+                    <label class="control-label">IP Address:</label>
+                    <div class="controls controls-text" id="adv_lan_ip"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Subnet Mask:</label>
+                    <div class="controls controls-text" id="adv_lan_mask"></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">MAC Address:</label>
+                    <div class="controls controls-text" id="adv_lan_mac"></div>
+                </div>
+                <hr style="margin-top:20px;">
+            </div>
+        </fieldset>
+        <fieldset class="ifmwrap-status">
+            <div class="legend-main">
+                <div class="legend">WiFi Status</div>
+                <div class="control-group">
+                    <label class="control-label">2.4GHz:</label>
+                    <div class="controls controls-text" id="adv_wrl_en"></div>
+                </div>
+                <div class="wifi-enable">
+                    <div class="control-group">
+                        <label class="control-label">WiFi Name:</label>
+                        <div class="controls controls-text" id="adv_wrl_ssid"></div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Encryption:</label>
+                        <div class="controls controls-text" id="adv_wrl_sec"></div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Channel:</label>
+                        <div class="controls controls-text" id="adv_wrl_channel"></div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Bandwidth:</label>
+                        <div class="controls controls-text" id="adv_wrl_band"></div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">MAC Address:</label>
+                        <div class="controls controls-text" id="adv_wrl_mac"></div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">5GHz:</label>
+                    <div class="controls controls-text" id="adv_wrl_en_5g"></div>
+                </div>
+                <div class="wifi-enable_5g">
+                    <div class="control-group">
+                        <label class="control-label">WiFi Name:</label>
+                        <div class="controls controls-text" id="adv_wrl_ssid_5g"></div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Encryption:</label>
+                        <div class="controls controls-text" id="adv_wrl_sec_5g"></div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Channel:</label>
+                        <div class="controls controls-text" id="adv_wrl_channel_5g"></div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Bandwidth:</label>
+                        <div class="controls controls-text" id="adv_wrl_band_5g"></div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">MAC Address:</label>
+                        <div class="controls controls-text" id="adv_wrl_mac_5g"></div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </fieldset>        
+    </fieldset>
+  
+  <script src="js/libs/j.js"></script>
+  <script src="js/libs/public.js"></script>
+  <script src="js/system_status.js"></script>
+</body></html>

@@ -1,0 +1,11 @@
+{
+"line":1,
+"wanType":2,
+"net":1,
+"adslUser":"",
+"adslPwd":"",
+"ssid":"Tenda_0335E4",
+"wrlPassword":"13182067",
+"country":"US",
+"power":"high"
+}

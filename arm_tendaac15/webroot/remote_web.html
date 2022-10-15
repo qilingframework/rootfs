@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-pptp">
+        	<div class="legend-main">
+            	<div class="control-group">
+                	<label class="control-label">Remote WEB:</label>
+                    <div class="controls">
+                    	<div id="remoteWebEn" class="btn-off"></div>
+                    </div>
+                </div>
+                <div id="remote_set" class="none">
+                    <div class="control-group">
+                        <label class="control-label">Remote IP Address:</label>
+                        <div class="controls">
+                            <input type="text" class="input-medium validatebox" id="remoteIp" maxlength="15" data-options="{&quot;type&quot;: &quot;remoteIp&quot;}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Port:</label>
+                        <div class="controls">
+                            <input type="text" class="input-medium validatebox" required="required" id="remotePort" maxlength="5" data-options="{&quot;type&quot;: &quot;num&quot;, &quot;args&quot;:[1024,65535]}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="red page-err" id="msg-err">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/remote_web.js"></script>
+</body></html>

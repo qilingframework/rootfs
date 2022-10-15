@@ -1,0 +1,5 @@
+{"ddnsEn":"1",
+"serverName": "3322.org",
+"ddnsUser":"123",
+"ddnsPwd":"456",
+"ddnsDomain":"baidu.com"}

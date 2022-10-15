@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body onload="initBackup();">
+        <fieldset class="ifmwrap-cloud">
+        	<form name="frmSetup" method="POST" action="/cgi-bin/UploadCfg" enctype="multipart/form-data">
+            	<div class="legend-main" style="padding-top:45px;">
+                	<div class="control-group">
+                        <label class="control-label">Backup a File:</label>
+                        <div class="controls">
+                            <input type="button" class="btn btn-normal" id="sys_backup" value="Backup">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Select a Setup File:</label>
+                        <div class="controls">
+                            <input type="file" name="filename" id="filename">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label"></label>
+                        <div class="controls">
+                             <input type="button" class="btn btn-normal" id="sys_restore" value="Restore">
+                        </div>
+                    </div>
+                    <div class="control-group" style="margin-bottom:0px;">
+                        <div class="red page-err" id="msg-err">&nbsp;</div>
+                    </div>
+                </div>
+       		</form>
+            
+        </fieldset>
+  
+  <script src="js/libs/j.js"></script>
+  <script src="js/libs/reasy-ui-1.0.3.js"></script>
+  <script src="js/libs/public.js"></script>
+  <script src="js/system.js"></script>
+</body></html>

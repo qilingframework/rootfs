@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="legend-main">
+            <div class="txt-center none" id="wanStatus0">
+                <img src="img/router1_images2.gif">
+                <p class="text-error">请将外网线插入WAN口</p>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script>var search = window.location.search.substr(1),
+        wanStatus = search.match(/wanStatus\=(\d)/)[1];
+
+    $("#wanStatus" + wanStatus).removeClass("none");
+    top.initIframeHeight();</script>
+</body></html>

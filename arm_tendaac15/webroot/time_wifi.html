@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-time">
+        	<div class="legend-main">
+            	<div id="wifi_set_wrap">
+                    <div id="wifi_set">
+                        <div class="control-group">
+                            <label class="control-label">WiFi Timing ON/OFF:</label>
+                            <div class="controls">
+                                <div id="schedWifiEnable" class="btn-off"></div>
+                            </div>
+                        </div>
+                        <div id="time_set" class="none">
+                            <div class="control-group">
+                                <label class="control-label">OFF Time: </label>
+                                <div class="controls">
+                                    <select name="startHour" id="startHour" class="input-mini"></select>:<select name="startHour" id="startMin" class="input-mini"></select>~<select name="startHour" id="endHour" class="input-mini"></select>:<select name="startHour" id="endMin" class="input-mini"></select></div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Repeat:</label>
+                                <div class="controls" style="height:30px;">
+                                    <label class="radio" for="everyday">
+                                        <input type="radio" name="timeType" id="everyday" value="0">Every Day</label>
+                                    <label class="radio" for="thatday">
+                                        <input type="radio" name="timeType" id="thatday" value="1">Specified Days</label>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label"></label>
+                                <div class="controls">
+                                    <label class="radio" for="day1">
+                                        <input type="checkbox" id="day1">Mon.</label>
+                                    <label class="radio" for="day2">
+                                        <input type="checkbox" id="day2">Tue.</label>
+                                    <label class="radio" for="day3">
+                                        <input type="checkbox" id="day3">Wed.</label>
+                                    <label class="radio" for="day4">
+                                        <input type="checkbox" id="day4">Thur.</label>
+                                    <label class="radio" for="day5">
+                                        <input type="checkbox" id="day5">Fri.</label>
+                                    <label class="radio" for="day6">
+                                        <input type="checkbox" id="day6">Sat.</label>
+                                    <label class="radio" for="day7">
+                                        <input type="checkbox" id="day7">Sun.</label>
+                                    
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="red page-err" id="msg-err"></div>
+                    </div>
+                    <div class="btn-group">
+                        <input type="button" class="btn btn-normal" id="submit" value="Save">
+                    </div>
+            	</div>
+                
+                <div id="ali_wifi_wrap" class="none">
+                	<div class="control-group">此页面显示阿里云端APP配置的WiFi预约规则</div>
+                	<div class="control-group">
+                    	<label class="control-label" style="text-align:left;">阿里wifi定时：</label>
+                        <div class="controls-text controls" id="ali_wifi_enable">Enable</div>
+                    </div>
+                    <div style="height:293px;">
+                	<table class="table table-fixed" style="width:100%px;">
+                        <thead>
+                            <tr><th width="50px" class="ali-th">索引</th>
+                            <th class="notd"></th>
+                            <th class="ali-th">WiFi关闭时间段</th>
+                            <th class="notd"></th>
+                            <th class="ali-th fixed" width="200px">重复</th>
+                            
+                        </tr></thead>
+                        
+                	</table>
+                    <table class="table table-fixed" style="width:100%;">
+                    	<tbody><tr class="row1">
+                            <th width="50px"></th>
+                            <th class="notd"></th>
+                            <th></th>
+                            <th class="notd"></th>
+                            <th class="fixed" width="200px"></th>
+                            
+                        </tr>
+                        </tbody><tbody id="list">
+                        
+                        </tbody>
+                    </table>
+                	</div>
+            	</div>
+             </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/time_wifi.js"></script>
+</body></html>

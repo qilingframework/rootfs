@@ -1,0 +1,30 @@
+[
+{"deviceId":"c8:3a:35:d1:d9:a5",
+"ip":"192.168.0.109",
+"devName":"user-PCfasd' \"asdfasdf",
+"isControled": "1",
+"line":"0",
+"limitEn":0,
+"connectType":"2.4G",
+"block":0
+},
+{"deviceId":"c8:3a:35:d1:d9:a5",
+"ip":"192.168.0.109",
+"devName":"us'>||what '/><span> sup",
+"isControled": "1",
+"line":"0",
+"limitEn":0,
+"connectType":"5G",
+"block":0
+},
+{
+"deviceId":"c8:3a:35:d1:d9:a5",
+"ip":"192.168.0.109",
+"devName":"zzc-PC",
+"isControled": "0",
+"line":"0",
+"limitEn":0,
+"connectType":"line",
+"block":0
+}
+]

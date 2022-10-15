@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-dmz">
+        	<div class="legend-main">
+            	<div class="control-group">
+                    <input type="button" class="btn" value="Export" id="export">
+                </div>
+                <div id="logList">
+                    <table class="table table-fixed">
+                        <tbody><tr>
+                            <th width="10%">Number</th>
+                            <th width="30%">Time</th>
+                            <th width="25%">Type</th>
+                            <th width="35%">Log</th>
+                        </tr>
+                        </tbody><tbody id="logBody">
+                            
+                        </tbody>
+                    </table>
+                    <div id="logPagination"></div>
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/libs/pagination.js"></script>
+    <script src="js/system_log.js"></script>
+</body></html>

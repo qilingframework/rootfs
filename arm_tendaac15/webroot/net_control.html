@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-dmz">
+        	<div class="legend-main">
+            	<div class="control-group">
+                	<label class="control-label">Bandwidth Control:</label>
+                    <div class="controls">
+                    	<div id="netControlEn" class="btn-off"></div>
+                    </div>
+                </div>
+                <div id="netList" class="none" style="min-height: 200px;">
+                    <table class="table table-fixed">
+                        <tbody><tr>
+                            <th width="20%">Device Name</th>
+                            <th width="18%">IP Address</th>
+                            <th width="20%">Current Speed</th>
+                            <th width="21%">Upload Limit</th>
+                            <th width="21%">Download Limit</th>
+                        </tr>
+                        </tbody><tbody id="netBody">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btn-group">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/net_control.js"></script>
+</body></html>

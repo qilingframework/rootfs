@@ -1,0 +1,4 @@
+{
+"dlnaEn":"1",
+"deviceName":"Tenda"
+}

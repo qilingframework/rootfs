@@ -1,0 +1,9 @@
+{
+"adv_country":"CN",
+"adv_band":"40",
+"adv_channel":"12",
+"adv_band_5g":"80",
+"adv_channel_5g":"161",
+"adv_mode": "bg",
+"adv_mode_5g": "an"
+}

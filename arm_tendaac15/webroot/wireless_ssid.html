@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-dhcp">
+            <div class="legend-main">
+            <form id="wrl-form">
+            	<input type="hidden" name="security" id="security">
+                <input type="hidden" name="security_5g" id="security_5g">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" style="font-weight:bold;">2.4GHz<span class="hide-white">：</span></label> 
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">WiFi Name:</label>
+                        <div class="controls">
+                            <input type="text" id="ssid" name="ssid" maxlength="32" class="validatebox input-large" required="required" data-options="{&quot;type&quot;:&quot;ssid&quot;}">
+                            <label class="radio" for="hideSsid"><input type="checkbox" id="hideSsid" name="hideSsid">Hide </label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Password:</label>
+                        <div class="controls">
+                            <input type="text" id="wrlPwd" name="wrlPwd" class="validatebox input-large" maxlength="63" data-options="{&quot;type&quot;:&quot;ssidPwd&quot;,&quot;args&quot;:[8,63]}">
+                            <label class="radio" for="pwd_none"><input type="checkbox" id="pwd_none">No Password</label>
+                        </div>
+                    </div>
+                </fieldset>
+            	<br>
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" style="font-weight:bold;">5GHz<span class="hide-white">：</span></label> 
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">WiFi Name:</label>
+                        <div class="controls">
+                            <input type="text" id="ssid_5g" name="ssid_5g" maxlength="32" class="validatebox input-large" required="required" data-options="{&quot;type&quot;:&quot;ssid&quot;}">
+                            <label class="radio" for="hideSsid_5g"><input type="checkbox" id="hideSsid_5g" name="hideSsid_5g">Hide </label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Password:</label>
+                        <div class="controls">
+                            <input type="text" id="wrlPwd_5g" name="wrlPwd_5g" class="validatebox input-large" maxlength="63" data-options="{&quot;type&quot;:&quot;ssidPwd&quot;,&quot;args&quot;:[8,63]}">
+                            <label class="radio" for="pwd_none_5g"><input type="checkbox" id="pwd_none_5g">No Password</label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+            			<div class="red page-err" id="wrl_save_msg">&nbsp;</div>
+            		</div>
+                </fieldset>
+            </form>
+            <div class="btn-group">
+            	<input type="button" id="save" class="btn btn-normal" value="Save">
+            </div>
+        </div>
+    </fieldset>
+
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/wireless_ssid.js"></script>
+</body></html>

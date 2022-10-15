@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html class="main-html"><head>
+    <meta charset="utf-8">
+    <title>Tenda WiFi</title>
+    <meta name="description" content="Ali Tenda wifi">
+    <meta name="author" content="E.Tw">
+    <meta http-equiv="pragma" content="no-cache">
+    
+    <!-- Le styles -->
+    <link href="css/reasy-ui.css" rel="stylesheet">
+
+    <!--[if IE 6]>
+        <link href="css/ie6.css" rel="stylesheet">
+        <script src="js/libs/DD_belatedPNG_0.0.8a-min.js"></script>
+        <script>
+            var isIE6 = true;
+            DD_belatedPNG.fix('*');
+        </script>
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="js/libs/html5shiv.js"></script>
+    <![endif]-->
+ 
+<script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+   
+
+</head>
+
+<body class="main-body scroll" style="background: #eee;">
+  <noscript>
+  <div style="color:firebrick">
+    <h1>Error! The browser does not support JavaScript. </h1>
+    <h4>Please enable JavaScript or try another browser compatible with JavaScript to experience more features of the device.
+    </h4>
+  </div>
+</noscript>
+	<div class="container" style="background:#fff;">
+		<div class="">
+			<div class="nav" id="main-nav">
+				<div class="nav-logo"></div>
+				<div id="main-nav-label" class="nav-label"></div>
+				<ul>
+					<li class="nav-list"><a href="#system-status" class="icon icons-status">Internet Status</a></li>
+					<li class="nav-list"><a href="#internet-setting" class="icon icons-wan">Internet Settings</a></li>
+					<li class="nav-list"><a href="#wireless-setting" class="icon icons-wireless">Wireless Settings</a></li>
+                    <li class="nav-list"><a href="#guest-setting" class="icon icons-guest">Guest Network</a></li>
+                    <li class="nav-list"><a href="#power-setting" class="icon icons-power" data-lang="Smart Power-save">Smart Power</a></li>
+                    <li class="nav-list"><a href="#usb-setting" class="icon icons-usb">USB Application</a></li>
+                    <li class="nav-list"><a href="#vpn-setting" class="icon icons-vpn">VPN</a></li>
+                    <li class="nav-list"><a href="#advance" class="icon icons-advance">Advanced Settings</a></li>
+					<li class="nav-list"><a href="#system" class="icon icons-system">System Settings</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="">
+        
+			<div class="main-content">
+									
+				<!-- section status -->
+				<div class="main-section  main-section-rows active" id="system-status">
+					<div class="main-section-title main-icons main-icons-status">Internet Status</div>
+
+                    <div class="main-section-content status-wrap">
+                        <div class="status-list-main none" id="deviceListWrap">
+                            <img src="./img/online-list.png" style="margin-bottom: -3px;">
+                            <span class="status-list-btn" id="onlineList" style="color:#ed7020;">
+                                <span id="clientNum">1</span>
+                                <span>Attached Devices</span>
+                            </span>
+                                    |
+                            <span class="status-list-btn" id="blackList">
+                                <span>Blacklist</span>
+                                <span id="blackNum"></span>
+                            </span>
+                        </div>
+                        <div class="status-wl">
+                            <div class="status-wl-pic-wrap" id="status_wl_more">
+                                <p class="txt-center">Wireless Settings</p>
+                                <div class="status-wl-lineup">
+                                    <div class="status-wl-ani-circle"></div>
+                                    <div class="status-wl-ani-circle2"></div>
+                                </div>
+                                <div class="status-wl-pic-lineup"></div>
+                                <div class="status-wl-line"></div>
+                            </div>
+
+                            <div class="status-wl-info none">
+                                <p class="txt-center"></p>
+                                <div id="status_wl_info_txt">
+                                    <span class="status-24g">
+                                        <div>2.4GHz:<i>&nbsp;</i><span class="wl24g-name"></span><span class="wl24g-sec"></span></div>
+                                        <!-- <div>Security:<i>&nbsp;</i><span class="wl24g-sec"></span></div> -->                                        
+                                    </span>
+                                    <span class="status-5g">
+                                        <div>5GHz:<i>&nbsp;</i><span class="wl5g-name"></span><span class="wl5g-sec"></span></div>
+                                        <!-- <div>Security:<i>&nbsp;</i><span class="wl5g-sec"></span></div> -->                                        
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="position: relative; top:50px;">  
+                            <div class="status-net txt-center">
+                                <p class="txt-center">Internet</p>
+                                <div class="status-internet-icon">
+                                    
+                                </div>
+                            </div>
+                            <div class="line-status-up" id="line_status"></div>
+                            <div class="status-wanstatus txt-center clickable">
+                                <p class="txt-center">Internet Settings</p>
+                                <input type="hidden" id="wanStatus">
+                                <div alt="" class="status-wan-pic" id="status_wan_more">
+                                    <div class="status-wan-internet"></div>
+                                </div>
+                               
+                                <div class="row hidden" id="wanStatusTxtWrap">
+                                    <label class="clickable">
+                                        <!-- <label class="status-wan"></label> -->
+                                        <div id="status_wan_txt" class="controls-text text-success">Connected! You can surf the Internet.</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="status-router"></div>
+                            
+                            <div class="status-usb none">
+                                <div id="status_usb_bar" class="progress-bar"></div>
+                            </div>
+                        </div>
+
+					</div>
+				</div>
+                
+				<!-- section internet-setting -->
+				<div class="main-section" id="internet-setting">
+					<div class="main-section-title main-icons main-icons-wan">Internet Settings</div>
+					<div class="main-section-content">
+                        <div class="control-group none" id="notAllowTip">
+                            <p class="red txt-center">Internet settings is unavailable under Universal Repeater mode. Please change the Wireless Repeating mode, and try again.</p>
+                        </div>
+
+                    	<form id="internet-form">
+                        	<input type="hidden" name="connect" id="connect" value="1">
+                            <input type="hidden" name="lanIp" id="lanIp">
+                            <input type="hidden" name="lanMask" id="lanMask">
+                            <div class="control-group" id="net_recomend_wrap">
+                                <label class="control-label">Tenda recommends:</label>
+                                <div class="controls controls-text"><b id="outType"></b></div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Select a connection type:</label>
+                                <div class="controls">
+                                    <select name="netWanType" class="input-append" id="netWanType">
+                                        <option value="0">DHCP</option>
+                                        <option value="1">Static IP</option>
+                                        <option value="2"> PPPoE</option>
+                                    </select>
+                                    <span class="select-tab"></span>
+                                </div>
+                            </div>
+                            <div id="dhcp_set" class="none">
+                                <div class="control-group">
+                                    <label class="control-label" data-lang="DNS Settings">DNS Settings</label>
+                                    <div class="controls">
+                                        <select name="dhcpDnsAuto" class="input-append" id="dhcpDnsAuto">
+                                            <option value="1">Obtain DNS address automatically</option>
+                                            <option value="0">Set DNS address manually</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="dhcp-manual-wrapper" class="none">
+                                    <div class="control-group">
+                                        <label class="control-label">Preferred DNS Server:</label>
+                                        <div class="controls">
+                                            <input type="text" class="validatebox" id="dhcpDns1" name="dhcpDns1" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的首选DNS服务器&quot;}">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">Alternate DNS Server:</label>
+                                        <div class="controls">
+                                            <input type="text" class="validatebox" id="dhcpDns2" name="dhcpDns2" maxlength="15" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的备用DNS服务器&quot;}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="static_ip" class="none">
+                                <div class="control-group">
+                                    <label class="control-label">IP Address:</label>
+                                    <div class="controls">
+                                        <input type="text" class="validatebox" id="staticIp" name="staticIp" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;ip&quot;}">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Subnet Mask:</label>
+                                    <div class="controls">
+                                        <input type="text" class="validatebox" id="mask" name="mask" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;mask&quot;}">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Default Gateway:</label>
+                                    <div class="controls">
+                                        <input type="text" class="validatebox" id="gateway" name="gateway" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的网关地址&quot;}">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Preferred DNS Server:</label>
+                                    <div class="controls">
+                                        <input type="text" class="validatebox" id="dns1" name="dns1" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的首选DNS服务器&quot;}">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Alternate DNS Server:</label>
+                                    <div class="controls">
+                                        <input type="text" class="validatebox" id="dns2" name="dns2" maxlength="15" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的备用DNS服务器&quot;}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ppoe_set" class="none">
+                                <div class="control-group">
+                                    <label class="control-label" data-lang="ISP Username:">Username:</label>
+                                    <div class="controls">
+                                        <input type="text" class="validatebox" id="adslUser" name="adslUser" maxlength="128" data-options="{&quot;type&quot;:&quot;ppoe&quot;}">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" data-lang="ISP Password:">Password:</label>
+                                    <div class="controls">
+                                        <input type="text" class="validatebox" id="adslPwd" name="adslPwd" maxlength="128" data-options="{&quot;type&quot;:&quot;ppoe&quot;}">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" data-lang="DNS Settings">DNS Settings</label>
+                                    <div class="controls">
+                                        <select name="pppoeDnsAuto" class="input-append" id="pppoeDnsAuto">
+                                            <option value="1">Obtain DNS address automatically</option>
+                                            <option value="0">Set DNS address manually</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="pppoe-manual-wrapper" class="none">
+                                    <div class="control-group">
+                                        <label class="control-label">Preferred DNS Server:</label>
+                                        <div class="controls">
+                                            <input type="text" class="validatebox" id="pppoeDns1" name="pppoeDns1" maxlength="15" required="required" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的首选DNS服务器&quot;}">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">Alternate DNS Server:</label>
+                                        <div class="controls">
+                                            <input type="text" class="validatebox" id="pppoeDns2" name="pppoeDns2" maxlength="15" data-options="{&quot;type&quot;:&quot;ip&quot;,&quot;msg&quot;:&quot;请输入正确的备用DNS服务器&quot;}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="connect_message" class="none">
+                                <div class="control-group" id="connectStatusWrap">
+                                    <label class="control-label">Connection Status:</label>
+                                    <div class="controls controls-text"><span id="connectStatus"></span></div>
+                                </div>
+                                <div class="control-group" id="connect_time">
+                                    <label class="control-label">Connected Time:</label>
+                                    <div class="controls controls-text" id="connectTime"></div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <div id="message-err" class="red"></div>
+                                </div>
+                            </div>
+                            <div class="btn-group control-group">
+                                <input type="button" id="wan_submit" class="btn btn-normal" value="Connect">
+                            </div>
+                        </form>
+
+                    </div>
+				</div>
+				
+				<!-- section wireless-setting -->
+				<div class="main-section" id="wireless-setting">
+					<div class="main-section-title main-icons main-icons-wireless">Wireless Settings</div>
+					<div class="main-section-content">
+                    	<section class="field-set">
+                            <div class="main-area" id="wrl_ssid_pwd">
+                                <div class="function-img icon-wirelessssid"></div>
+                                <div class="function-title">WiFi Name & Password</div>
+                                <!-- <div class="function-status">Good</div> -->
+                            </div>
+                            <div class="main-area" id="wrl_wifi_time">
+                                <div class="function-img icon-wifi-timer"></div>
+                                <div class="function-title">WiFi Schedule</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="wrl_bridge">
+                                <div class="function-img icon-wisp"></div>
+                                <div class="function-title">Wireless Repeating</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="wrl_channel">
+                                <div class="function-img icon-wireless-channel"></div>
+                                <div class="function-title">Channel &amp; Bandwidth</div>
+                                <div class="function-status">Channel/Bandwidth</div>
+                            </div>
+                            <div class="main-area" id="wrl_signal">
+                                <div class="function-img icon-wireless-signal"></div>
+                                <div class="function-title">Signal Conditioning</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="wrl_wps">
+                                <div class="function-img icon-wps"></div>
+                                <div class="function-title">WPS</div>
+                                <div class="function-status"></div>
+                            </div>
+                        </section>
+                    </div>
+				</div>
+
+                <!-- section wireless-setting -->
+				<div class="main-section" id="guest-setting">
+                    <div class="main-section-title main-icons main-icons-guest">Guest Network</div>
+                    <div class="main-section-content">
+                        
+                        <form id="guest-form">
+                        <input type="hidden" id="guestSecurity">
+                        <input type="hidden" id="guestSecurity_5g">
+                            <fieldset>
+                                <div class="control-group">
+                                    <label class="control-label">Guest Network:</label>
+                                    <div class="controls">
+                                        <div id="guestEn" class="btn-off"></div>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">2.4GHz WiFi Name:</label>
+                                    <div class="controls">
+                                        <input type="text" id="guestSsid" name="guestSsid" maxlength="32" class="validatebox" required="required" data-options="{&quot;type&quot;:&quot;ssid&quot;}">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">5GHz WiFi Name:</label>
+                                    <div class="controls">
+                                        <input type="text" id="guestSsid_5g" name="guestSsid_5g" maxlength="32" class="validatebox" required="required" data-options="{&quot;type&quot;:&quot;ssid&quot;}">
+                                        
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Guest Network Password:</label>
+                                    <div class="controls">
+                                        <input type="text" id="guestWrlPwd" name="guestWrlPwd" class="validatebox" maxlength="63" data-options="{&quot;type&quot;:&quot;ssidPwd&quot;,&quot;args&quot;:[8,63]}">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <div class="red page-err" id="guest_save_msg">&nbsp;</div>
+                                </div>
+                                <div class="btn-group">
+                                    <input type="button" class="btn btn-normal" id="guest_submit" value="Save">
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>            
+                </div>
+
+                <!-- section power-setting -->
+                <div class="main-section" id="power-setting">
+                    <div class="main-section-title main-icons main-icons-power">Smart Power-save</div>
+                    <div class="main-section-content">
+                        <form id="power-form">
+                            <div class="control-group">
+                                <label class="control-label">Smart Power-save:</label>
+                                <div class="controls">
+                                    <div id="powerSavingEn" class="btn-off"></div>
+                                    <span class="text-warning" id="timeUpTip">The Smart Power-save takes effect when the system time synchronizes the Internet time.</span>
+                                </div>
+                            </div>
+                            <div class="control-group none" id="power_time_set">
+                                <label class="control-label">Power-save Time:</label>
+                                <div class="controls">
+                                    <select name="startHour" id="startHour" class="input-mini"></select>:<select name="startHour" id="startMin" class="input-mini"></select>~<select name="startHour" id="endHour" class="input-mini"></select>:<select name="startHour" id="endMin" class="input-mini"></select>&nbsp;
+                                </div>
+                            </div>
+
+                            <div class="control-group none" id="power_save_delay_set">
+                                <label class="control-label"></label>
+                                <div class="controls">
+                                    <label class="radio" for="power_save_delay">
+                                        <input type="checkbox" id="power_save_delay" name="power_energy_save">The Power-save start time will delay when data is still transmitting.</label>
+                                </div>
+                                <div class="controls controls-text" id="power_save_tip"><!-- It can save 5 kw·h every month as estimated. --></div>
+                            </div>
+                        </form>
+                        <div class="control-group none" id="power_notice">
+                            <label class="control-label"></label>
+                            <div class="controls">When enabled, the router is under power-save mode.<span class="select-tab"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <div id="power-message-err" class="red"></div>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <input type="button" id="power_submit" class="btn btn-normal" value="Save">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- section usb-setting -->
+                <div class="main-section" id="usb-setting">
+                    <div class="main-section-title main-icons main-icons-usb">USB</div>
+                    <div class="main-section-content">
+                        <section class="field-set">
+                            <div class="main-area" id="usb_samba">
+                                <div class="function-img icon-fileshare"></div>
+                                <div class="function-title">File Share</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="usb_dlna">
+                                <div class="function-img icon-dlan"></div>
+                                <div class="function-title">DLNA</div>
+                                <div class="function-status"></div>
+                            </div>
+
+                            <div class="main-area" id="usb_printer">
+                                <div class="function-img icon-printer"></div>
+                                <div class="function-title">Printer Service</div>
+                                <div class="function-status"></div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- section vpn-setting -->
+                <div class="main-section" id="vpn-setting">
+                    <div class="main-section-title main-icons main-icons-vpn">VPN</div>
+                    <div class="main-section-content">
+                        <section class="field-set">
+                            <div class="main-area" id="vpn_server">
+                                <div class="function-img icon-vpn-server"></div>
+                                <div class="function-title">PPTP Server</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="vpn_client">
+                                <div class="function-img icon-vpn-client"></div>
+                                <div class="function-title">PPTP/L2TP Client</div>
+                                <div class="function-status"></div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- section function-setting -->
+                <div class="main-section" id="advance">
+                    <div class="main-section-title main-icons main-icons-advance">Advanced Settings</div>
+                    <div class="main-section-content">
+                        <section class="field-set">
+                            <div class="main-area" id="adv_parental">
+                                <div class="function-img icon-parental-control"></div>
+                                <div class="function-title">Parental Control</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="adv_netcontrol">
+                                <div class="function-img icon-netcontrol"></div>
+                                <div class="function-title">Bandwidth Control</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="adv_led">
+                                <div class="function-img icon-smart-led"></div>
+                                <div class="function-title">Smart LED</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="adv_cloud">
+                                <div class="function-img icon-cloud-management"></div>
+                                <div class="function-title">Tenda Cloud</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="adv_remoteweb">
+                                <div class="function-img icon-remote-web"></div>
+                                <div class="function-title">Remote WEB</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="adv_ddns">
+                                <div class="function-img icon-ddns"></div>
+                                <div class="function-title">DDNS</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="adv_virtualServer">
+                                <div class="function-img icon-virtual-server"></div>
+                                <div class="function-title">Virtual Server</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="adv_dmz">
+                                <div class="function-img icon-dmz"></div>
+                                <div class="function-title">DMZ</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="adv_upnp">
+                                <div class="function-img icon-upnp"></div>
+                                <div class="function-title">UPnP</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="adv_iptv">
+                                <div class="function-img icon-iptv"></div>
+                                <div class="function-title">IPTV</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="adv_fastNat">
+                                <div class="function-img icon-fastnat"></div>
+                                <div class="function-title">Fast Nat</div>
+                                <div class="function-status"></div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+				<!-- section system-setting -->
+				<div class="main-section" id="system">
+					<div class="main-section-title main-icons main-icons-system">System Settings</div>
+					<div class="main-section-content">
+                    	<section class="field-set">
+                            <div class="main-area" id="sys_status">
+                                <div class="function-img icon-system-status"></div>
+                                <div class="function-title">System Status</div>
+                                <div class="function-status">Good</div>
+                            </div>
+                        	<div class="main-area" id="sys_pwd">
+                            	<div class="function-img icon-password"></div>
+                            	<div class="function-title">Login Password</div>
+                                <div class="function-status">Change the login password</div>
+                            </div>
+                            <div class="main-area" id="sys_lan_status">
+                                <div class="function-img icon-lan-ip"></div>
+                                <div class="function-title">LAN IP Settings</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="sys_wan">
+                                <div class="function-img icon-wan-set"></div>
+                                <div class="function-title">WAN Settings</div>
+                                <div class="function-status">MTU/MAC/Speed</div>
+                            </div>
+                            <div class="main-area" id="sys_reboot">
+                                <div class="function-img icon-reboot"></div>
+                                <div class="function-title">Reboot</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area" id="sys_upgrade">
+                                <div class="function-img icon-system-upgrade"></div>
+                                <div class="function-title">Firmware Upgrade</div>
+                                <div class="function-status">Update the firmware</div>
+                            </div>
+                            <div class="main-area" id="sys_backup">
+                                <div class="function-img icon-system-backup"></div>
+                            	<div class="function-title">Backup/Restore</div>
+                                <div class="function-status">Backup a file to local host</div>
+                            </div>
+                            
+                            <div class="main-area main-area-restore" id="sys_config">
+                            	<div class="function-img icon-reset"></div>
+                            	<div class="function-title">Reset</div>
+                                <div class="function-status">Clear all settings of the router</div>
+                            </div>
+                            <div class="main-area main-area-restore" id="sys_log">
+                                <div class="function-img icon-system-log"></div>
+                                <div class="function-title">System Log</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area main-area-restore" id="sys_auto">
+                                <div class="function-img icon-automaintaince"></div>
+                                <div class="function-title">Auto Maintenance</div>
+                                <div class="function-status"></div>
+                            </div>
+                            <div class="main-area main-area-restore" id="sys_time">
+                                <div class="function-img icon-time-setup"></div>
+                                <div class="function-title">Time Setup</div>
+                                <div class="function-status"></div>
+                            </div>
+                        </section>
+                    </div>
+				</div>
+                				
+				<!-- section other-setting -->
+				<!-- <div class="main-section" id="other">
+                    <div class="main-section-title main-icons main-icons-other">私有云</div>
+                    <div class="main-section-content">
+                 
+                                        <div class="legend-main">
+                                            <div class="yun-main">
+                                                <div class="yun-infoooooo"></div>
+                                                <div class="control-group">
+                                                    <div id="no_ie">
+                                                        <div><span id="yun_set">\\tendawifi.com</span><input type="button" class="btn btn-small none" id="clone_yun" value="复制"></div>
+                                                        <div class="notice-msg">*请复制私有云地址，并粘贴到文件管理器地址栏中打开私有云空间</div>
+                                                    </div>
+                 
+                                                    <div>将您的移动硬盘或U盘插入路由器的USB接口，组建小型家用私有云。
+                                                        便可以在家庭内的多台设备上访问插在路由器上的移动硬盘或U盘内的照片、视频
+                                                        或文件，同时您也可以通过电脑上传更多内容丰富您的小型家庭私有云。</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                </div> -->
+
+
+			</div>
+		</div>
+        
+	</div>
+	<div class="loadding-page none">
+    	<img src="img/loading.gif">
+    </div>
+    <!-- dialog -->
+    <div class="main-dailog none">
+        <div class="fopare-ifmwrap-title">
+        	<div id="iframe-msg" class="red"></div>
+            <div id="head_title" class="iframe-title">System Status</div>
+            <div id="head_title2" class="iframe-title"></div>
+            <div class="iframe-close">×</div>
+            
+        </div>
+       	<iframe frameborder="0" src="" class="dailog-iframe"></iframe>
+    </div>
+    
+    <div class="save-msg none">
+        <div class="save-loading"></div>
+        <div id="page-message"></div>
+    </div>    
+
+
+<script src="js/libs/j.js"></script>
+<script src="js/libs/jquery.mousewheel.min.js"></script>
+<script src="js/libs/jquery.easing.1.3.js"></script>
+<script src="js/libs/reasy-ui-1.0.3.js"></script>
+<script src="js/libs/public.js"></script>
+<script src="js/main.js"></script>
+<script src="js/libs/drager_zzc.js"></script>
+<script>
+$(function() {
+    $(".main-dailog").drager(".fopare-ifmwrap-title");
+});
+</script>
+</body>
+</html>

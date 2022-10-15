@@ -1,0 +1,1 @@
+{"netControl": "1","led":"1","cloud":"0","remoteWeb":"1","ddns":"1","upnp":"0","iptv":"1", "wl_mode": "apclientd"}

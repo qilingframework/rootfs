@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+  		<fieldset class="ifmwrap-cloud">
+        	<div class="legend-main">
+                <div id="parental_list">
+                	
+					<table class="table">
+                        <thead>
+                            <tr><th width="40%">Device Name</th>
+                            <th width="30%">IP Address</th>
+                            <th width="30%">Parental Control</th>                        
+                        </tr></thead>
+                         <tbody id="list">
+
+                         </tbody>
+                    </table>   
+            	</div>
+                
+                <div id="rule_list" class="none">
+                	
+					<table class="table">
+                         <tbody id="list2">
+                         <tr><th width="20%"></th>
+                         <th width="40%"></th>
+                         <th width="10%"></th>
+                         <th width="30%"></th>
+                         </tr></tbody>
+                    </table>   
+            	</div>
+                
+                <div id="parental_wrap" class="none">
+                	
+                    <div class="control-group">
+                        <label class="control-label">Device Name:</label>
+                        <div class="controls controls-text">
+							<span id="device_name" style="width:120px;"></span><label class="none" id="device_mac"></label>
+							<span style="margin-left:40px;"><input type="button" id="device_edit" class="btn btn-mini" value="Edit"></span>
+                     
+						</div>
+                	</div>
+                    
+                   
+                    
+                    <div class="control-group">
+                
+                	<label class="control-label">Parental Control:</label>
+                    <div class="controls">
+                    	 <div id="parentcontrolEnable" class="btn-off"></div>
+                         
+                    </div>
+                	</div>
+                    
+                    <div id="parental_set">
+                    
+                    
+                    <div class="control-group">
+                		<label class="control-label">Internet Accessible Time: </label>
+                        <div class="controls">
+                        	<select name="startHour" id="startHour" class="input-mini"></select>&nbsp;<select name="startMin" id="startMin" class="input-mini"></select> ~<select name="endHour" id="endHour" class="input-mini"></select>&nbsp;<select name="endMin" id="endMin" class="input-mini"></select></div>
+                    </div>
+                    
+                    <div class="control-group" style="margin-bottom:4px;">
+                		<label class="control-label">Repeat:</label>
+                        <div class="controls" style="height:30px;">
+                        	<label class="radio" for="everyday">
+                                    <input type="radio" name="timeType" id="everyday" value="0">Every Day</label>
+                                <label class="radio" for="thatday">
+                                    <input type="radio" name="timeType" id="thatday" value="1">Specified Days</label>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="control-label"></label>
+                        <div class="controls">
+                        	<label class="radio" for="day0">
+                                <input type="checkbox" id="day0">Sun.</label>
+                            <label class="radio" for="day1">
+                                <input type="checkbox" id="day1">Mon.</label>
+                            <label class="radio" for="day2">
+                                <input type="checkbox" id="day2">Tue.</label>
+                            <label class="radio" for="day3">
+                                <input type="checkbox" id="day3">Wed.</label>
+                            <label class="radio" for="day4">
+                                <input type="checkbox" id="day4">Thur.</label>
+                            <label class="radio" for="day5">
+                                <input type="checkbox" id="day5">Fri.</label>
+                            <label class="radio" for="day6">
+                                <input type="checkbox" id="day6">Sat.</label>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="control-group">
+                		<label class="control-label">Website Limit:</label>
+                        <div class="controls">
+                        	<div class="btn-off" id="whiteEnable"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="web_limit">
+                    
+                        <div class="control-group">
+                            <label class="control-label">Accessible Website:</label>
+                            <div class="controls">
+                                <input type="text" class="text" id="parent_urls" maxlength="319" style="width:350px;">
+                                <label class="help-block" style="margin-top: 8px;">Please enter the key words of the websites, and delimit them with ",". For example："eHow,google" means that only ehow and google are accessible.</label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+
+                    </div>
+                    <div class="control-group">
+                        <div class="red page-err" id="msg-err"></div>
+                    </div>
+                    <div class="btn-group" style="margin-top:5px;">
+                    <input type="button" id="save" class="btn" value="Save">
+                    <input type="button" id="cancel" class="btn last" value="Cancel">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/parental_control.js"></script>   
+</body></html>

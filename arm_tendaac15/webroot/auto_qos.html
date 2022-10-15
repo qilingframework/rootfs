@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-qos">
+        	<div class="legend-main">
+                <div id="qos_set">
+                    <div class="control-group">
+                        <label class="control-label">智能加速：</label>
+                        <div class="controls">
+                            <!--<div id="schedWifiEnable" class="btn-off"></div>-->
+                            <div id="autoQosEnable" class="btn-off"></div>
+                            <label class="help-block" style="color:#999999; margin-top:10px;">开启后优先保证网页浏览</label>
+                        </div>
+                    </div>
+                    <div id="rate_set" class="none">
+                    	<!--<div class="control-group">
+                        	为了保证智能加速能够更好地进行限速，建议您先进行测速
+                            
+                        </div>
+                        <div class="control-group">
+                        	<div class="controls">
+								<input type="button" class="btn btn-small" value="开始测速" id="test_qos">
+							
+							</div>
+                            
+                        </div>
+						<div class="control-group none">
+							<div class="controls">
+								<div class="main-loadding" style="margin-left:40px;">
+									<img src="img/loading.gif" />
+								</div>
+								
+								<div id="speed_tip"></div>
+							</div>
+						</div>
+						
+                        <div class="control-group speed_ret">
+                        	<label class="control-label">上传速率：</label>
+                            <div class="controls controls-text">
+                            	<span id="test_rate_up"></span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>下载速率：</span>
+                                <span id="test_rate_down"></span>
+                            </div>
+                        </div>-->
+                        
+                        <!--<div class="control-group speed_ret">
+                        	<label class="control-label">下载速率：</label>
+                            <div class="controls controls-text">
+                            	<span id="test_rate_down"></span>
+                            </div>
+                        </div>-->
+                    	<div class="none">
+                    	<div class="control-group">
+                        	<label class="control-label">模式：</label>
+                            
+                            <div class="controls" style="height:30px;">
+                            	<label class="radio" for="mode_0">
+                                	<input type="radio" id="mode_0" name="mode">网页加速<label style="color:#999999;">优先保证网页浏览</label>
+                                </label>
+                                
+                            </div> 
+                        </div>
+                        
+                        <div class="control-group">
+                        	<div class="controls" style="height:30px;">
+                                <label class="radio" for="mode_1">
+                                	<input type="radio" id="mode_1" name="mode">视频加速<label style="color:#999999;">优先保证视频观看</label>
+                                </label>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+          
+                            <div class="controls" style="height:30px;">
+
+                                <label class="radio" for="mode_2">
+                                	<input type="radio" id="mode_2" name="mode">游戏加速<label style="color:#999999;">优先保证游戏流畅</label>
+                                </label>
+                                
+                            </div>
+
+                        </div>
+                        </div>
+                        <div id="need_test" class="red none">为获得最佳加速效果，保存后系统将自动检测您的网络总带宽，检测会影响当前接入设备访问互联网，整个过程约30秒。</div>
+                        <!--<div class="control-group">
+                            <label class="control-label">WAN口上行速率：</label>
+                            <div class="controls">
+                            	<input type="text" id="wan_up" name="wan_up" maxlength="6" class="validatebox input-medium" data-options='{"type":"num","args":[0,128000]}'> 
+                                <label>KB/s</label>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">WAN口下行速率：</label>
+                            <div class="controls">
+                            	<input type="text" id="wan_down" name="wan_down" maxlength="6" class="validatebox input-medium" data-options='{"type":"num","args":[0,128000]}'> 
+                                <label>KB/s</label>
+                            </div>
+                        </div>
+                        -->
+                        	
+                     </div>
+                </div>
+                <div class="control-group">
+                	<div class="red page-err" id="msg-err"></div>
+                </div>
+                <div class="btn-group" style="margin-top:0px;">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+     <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script src="js/auto_qos.js"></script>
+</body></html>

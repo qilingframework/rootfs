@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+</head>
+  <body>
+        <fieldset class="ifmwrap-dhcp">
+        	<div class="legend-main">
+            	<div class="control-group">
+                	<label class="control-label">Fast Nat</label>
+                    <div class="controls">
+                    	<div id="fastnatEn" class="btn-off"></div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                	<input type="button" class="btn btn-normal" id="submit" value="Save">
+                </div>
+            </div>
+        </fieldset>
+    
+    <script src="js/libs/j.js"></script>
+    <script src="js/libs/reasy-ui-1.0.3.js"></script>
+    <script src="js/libs/public.js"></script>
+    <script language="javascript">
+var G = {},
+	initObj = {};
+$(function () {
+	getValue();
+	$("#fastnatEn").on("click", changeFastNatEn);
+	$("#submit").on("click", function () {
+		preSubmit();
+	});
+	top.loginOut();
+	top.$(".main-dailog").removeClass("none");
+	top.$(".save-msg").addClass("none");
+
+});
+
+function changeFastNatEn() {
+	var className = $("#fastnatEn").attr("class");
+	if (className == "btn-off") {
+		$("#fastnatEn").attr("class", "btn-on");
+		$("#fastnatEn").val(1);
+	} else {
+		$("#fastnatEn").attr("class", "btn-off");
+		$("#fastnatEn").val(0);
+	}
+	top.initIframeHeight();
+}
+
+function getValue() {
+	$.GetSetData.getJson("goform/GetAdvFastNat?" + Math.random(), initValue);
+}
+
+function initValue(obj) {
+	initObj = obj;
+
+	top.$(".main-dailog").removeClass("none");
+	top.$("iframe").removeClass("none");
+	top.$(".loadding-page").addClass("none");
+
+	if (obj["fastnatEn"] == "0") {
+		$("#fastnatEn").attr("class", "btn-off");
+		$("#fastnatEn").val(0);
+	} else {
+		$("#fastnatEn").attr("class", "btn-on");
+		$("#fastnatEn").val(1);
+	}
+	top.initIframeHeight();
+}
+
+function preSubmit() {
+	var fastnatEn;
+	
+	fastnatEn = $("#fastnatEn").val();
+
+	data = "fastnatEn=" + fastnatEn ;
+	$.post("goform/SetAdvFastNat", data, callback);
+}
+
+function callback(str) {
+	if (!top.isTimeout(str)) {
+		return;
+	}
+	//var num = $.parseJSON(str).errCode;
+
+	top.showSaveMsg(0);
+	//top.showSaveMsg(num);
+	//if (num == 0) 
+	{
+		//getValue();
+		top.advInfo.initValue();
+	}
+}    
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+"lan":"192.168.0.1",
+"firmware":"V1.0.0.2",
+"rebootEn":"0",
+"wl_mode": "apclientdd",
+"apClientConnect":"1"
+}

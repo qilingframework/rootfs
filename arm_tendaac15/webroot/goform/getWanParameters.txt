@@ -1,0 +1,20 @@
+
+{"outType":"1",
+"wanType":"0",
+"lanIp":"192.168.1.1",
+"lanMask":"255.255.255.0",
+"pptpSvrIp": "192.168.2.1",
+"pptpSvrMask":"255.255.255.0",
+"guestIp": "192.168.3.1",
+"guestMask":"255.255.255.0",
+"pppoeErr":0,
+"connectTime":"25000",
+"wan_mtu":"1500",
+"connectStatus":"1311007",
+"vpnClient":"1",
+"vpnClientUser": "vpnuser",
+"wl_mode":"apclientd",
+"adslUser":"heiyouwannadance",
+"adslPwd":"heiyouwannadance",
+"saving": "1"
+}

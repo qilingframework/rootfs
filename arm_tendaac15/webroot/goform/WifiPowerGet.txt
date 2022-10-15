@@ -1,0 +1,4 @@
+{
+"power":"low",
+"power_5g":"high"
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <link href="css/reasy-ui.css" rel="stylesheet">
+    <title></title>
+  <script src="lang/b28n_async.js"></script>
+<script>
+B.setTextDomain(["translate"]);
+</script>
+<style> 
+.control-group { 
+	margin-bottom: 8px; 
+} 
+.btn-normal { 
+	height: 35px; 
+} 
+</style> 
+
+</head>
+  <body>
+        <fieldset>
+        	<form id="wireless" class="ifmwrap-wireless">
+                <div class="legend-main">
+                    <div class="control-group">
+                        <label class="control-label">Country|Region:</label>
+                        <div class="controls">
+                            <select id="adv_country" name="adv_country" class="input-medium">
+                                <option value="US">America</option>
+                                <option value="AU">Australia</option>
+                                <option value="AT">Austria</option>
+                                <option value="BA">Bosnia-Herzegovina</option>
+                                <option value="BR">Brazil</option>
+                                <option value="CA">Canada</option>
+                                <option value="CN">China</option>
+                                <option value="CZ">Czech</option>
+                                <option value="FR">France</option>
+                                <option value="DE">Germany</option>
+                                <option value="GR">Greece</option>
+                                <option value="HK">HongKong</option>
+                                <option value="HU">Hungary</option>
+                                <option value="ID">Indonesia</option>
+                                <option value="IT">Italy</option>
+                                <option value="MX">Mexico</option>
+                                <option value="NO">Norway</option>
+                                <option value="PL">Poland</option>
+                                <option value="PT">Portugal</option>
+                                <option value="RO">Romania</option>
+                                <option value="RU">Russia</option>
+                                <option value="SA">Saudi Arabia</option>
+                                <option value="RS">Serbia</option>
+                                <option value="SI">Slovenia</option>
+                                <option value="ZA">South Africa</option>
+                                <option value="ES">Spain</option>
+                                <option value="TW">Taiwan</option>
+                                <option value="TH">Thailand</option>
+                                <option value="TR">Turkey</option>
+                                <option value="GB">U.K.</option>
+                                <option value="AE">UAE</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">2.4GHz<span class="hide-white">:</span></label>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Network Mode:</label>
+                        <div class="controls">
+                            <select id="adv_mode" name="adv_mode" class="input-medium">
+                                <option value="bgn">11bgn mixed</option>
+                                <option value="bg">11bg mixed</option>
+                                <option value="n only">11n only</option>
+                                <!-- <option value="b">11b</option>
+                                <option value="g">11g</option> -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Channel:</label>
+                        <div class="controls">
+                            <select id="adv_channel" name="adv_channel" class="input-medium">
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Bandwidth:</label>
+                        <div class="controls">
+                            <select name="adv_band" id="adv_band" class="input-medium">
+                            	<option value="20">20</option>
+                                <option value="40">40</option>
+								<option value="auto">20/40</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">5GHz<span class="hide-white">:</span></label>
+                       
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Network Mode:</label>
+                        <div class="controls">
+                            <select id="adv_mode_5g" name="adv_mode_5g" class="input-medium">
+                                <option value="ac">11a/n/ac mixed</option>
+                                <option value="ac only">11ac only</option>
+                                <!-- <option value="an">11a/n mixed</option>
+                                <option value="a">11a</option> -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Channel:</label>
+                        <div class="controls">
+                            <select id="adv_channel_5g" name="adv_channel_5g" class="input-medium"></select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Bandwidth:</label>
+                        <div class="controls">
+                            <select name="adv_band_5g" id="adv_band_5g" class="input-medium">
+                                <option value="20">20</option>
+                                <option value="40">40</option>
+                                <option value="80">80</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <input type="button" class="btn btn-normal" id="submit" value="Save">
+                    </div>
+                </div>
+       		</form>
+            <br>
+        </fieldset>
+  
+  <script src="js/libs/j.js"></script>
+  <script src="js/libs/public.js"></script>
+  <script src="js/libs/reasy-ui-1.0.3.js"></script>
+  <script src="js/wireless.js"></script>
+</body></html>
